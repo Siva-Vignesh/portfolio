@@ -6,6 +6,7 @@
     <title>Siva Vignesh</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap');
         
@@ -848,28 +849,22 @@
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600">Siva Vignesh</a>
             <div class="hidden md:flex space-x-8">
-                <a href="#home" class="nav-link text-gray-200 hover:text-green-400 transition">Base Camp</a>
-                <a href="#travel" class="nav-link text-gray-200 hover:text-green-400 transition">Expeditions</a>
-                <a href="#professional" class="nav-link text-gray-200 hover:text-green-400 transition">Journey Log</a>
-                <a href="#planets" class="nav-link text-gray-200 hover:text-green-400 transition">Cosmic Age</a>
-                <a href="#projects" class="nav-link text-gray-200 hover:text-green-400 transition">
-                    <span class="relative">
-                        Projects
-                        <span class="absolute -top-1 -right-3 flex h-2 w-2">
-                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"></span>
-                            <span class="relative inline-flex rounded-full h-2 w-2 bg-pink-500"></span>
-                        </span>
-                    </span>
-                </a>
+                <a href="#home" class="nav-link text-gray-200 hover:text-green-400 transition">Home</a>
+                <a href="#terminal-section" class="nav-link text-gray-200 hover:text-green-400 transition">Terminal</a>
+                <a href="#travel" class="nav-link text-gray-200 hover:text-green-400 transition">Travel</a>
+                <a href="#professional" class="nav-link text-gray-200 hover:text-green-400 transition">Professional</a>
+                <a href="#planets" class="nav-link text-gray-200 hover:text-green-400 transition">Age</a>
+                <a href="#project-banners" class="nav-link text-gray-200 hover:text-green-400 transition">Projects</a>
+                <a href="#connect" class="nav-link text-gray-200 hover:text-green-400 transition">Connect</a>
             </div>
             <div class="hidden md:flex items-center space-x-6">
                 <div class="flex items-center space-x-2">
                     <span class="text-gray-400">Earth:</span>
-                    <span class="text-green-400 font-bold earth-age-nav">26</span>
+                    <span class="text-green-400 font-bold earth-age-nav">--</span>
                 </div>
                 <div class="flex items-center space-x-2">
                     <span class="text-gray-400">Mars:</span>
-                    <span class="text-green-400 font-bold mars-age-nav">13.8</span>
+                    <span class="text-green-400 font-bold mars-age-nav">--</span>
                 </div>
                 <div class="flex items-center space-x-2 border-l border-gray-700 pl-4">
                     <i class="far fa-clock text-green-400 mr-1"></i>
@@ -1097,18 +1092,16 @@
         <div class="container mx-auto px-4 relative z-10">
             <!-- Section Header -->
             <div class="text-center mb-12">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 mb-4">
-                    <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-                    <span class="text-xs font-mono text-green-400 tracking-wider">INTERACTIVE EXPERIENCE</span>
-                </div>
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-3">
-                    Explore via <span class="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">Terminal</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">
+                    <span class="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">About Me</span>
                 </h2>
                 <p class="text-gray-400 text-sm max-w-md mx-auto">Type commands to navigate through my portfolio. Try <code class="px-2 py-0.5 bg-gray-800 rounded text-green-400">help</code> to get started!</p>
             </div>
 
-            <!-- Laptop Container -->
-            <div class="max-w-4xl mx-auto">
+            <!-- Terminal Container -->
+            <div class="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- Left: Laptop -->
+                <div class="order-1">
                 <!-- Laptop Screen -->
                 <div class="relative">
                     <!-- Screen Bezel -->
@@ -1190,6 +1183,12 @@
                     <button onclick="runQuickCommand('cat about.txt')" class="px-3 py-1 text-xs font-mono bg-gray-800 text-green-400 rounded border border-gray-700 hover:border-green-500/50 hover:bg-gray-700 transition-all">cat about.txt</button>
                     <button onclick="runQuickCommand('cd projects')" class="px-3 py-1 text-xs font-mono bg-gray-800 text-green-400 rounded border border-gray-700 hover:border-green-500/50 hover:bg-gray-700 transition-all">cd projects</button>
                     <button onclick="runQuickCommand('whoami')" class="px-3 py-1 text-xs font-mono bg-gray-800 text-green-400 rounded border border-gray-700 hover:border-green-500/50 hover:bg-gray-700 transition-all">whoami</button>
+                </div>
+                </div>
+                
+                <!-- Right: Empty Space for Future Development -->
+                <div class="order-2">
+                    <!-- Reserved for future content -->
                 </div>
             </div>
         </div>
@@ -1653,374 +1652,6 @@ Python | Java | Selenium | Jenkins | Docker`
     </script>
     <!-- ==================== END INTERACTIVE TERMINAL SECTION ==================== -->
 
-    <!-- ==================== PHYSICS SKILLS SECTION ==================== -->
-    <section id="skills-physics" class="min-h-screen bg-gradient-to-b from-black via-gray-950 to-gray-900 relative overflow-hidden flex flex-col">
-        <!-- Background Effects -->
-        <div class="absolute inset-0 opacity-20 pointer-events-none">
-            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/30 rounded-full blur-3xl"></div>
-            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl"></div>
-        </div>
-
-        <!-- Section Header -->
-        <div class="text-center pt-16 pb-6 relative z-10">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 mb-4">
-                <span class="w-2 h-2 rounded-full bg-purple-400 animate-pulse"></span>
-                <span class="text-xs font-mono text-purple-400 tracking-wider">INTERACTIVE PLAYGROUND</span>
-            </div>
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-3">
-                My <span class="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">Tech Stack</span>
-            </h2>
-            <p class="text-gray-400 text-sm max-w-md mx-auto mb-2">Drag the skills around and watch them interact!</p>
-            <p class="text-gray-600 text-xs">Click and drag any skill • They have physics! 🎮</p>
-        </div>
-
-        <!-- Physics Canvas Container - Full Width -->
-        <div class="flex-1 relative px-4 pb-4">
-            <div id="skills-container" class="relative w-full h-full bg-gray-900/30 rounded-2xl border border-gray-800 overflow-hidden">
-                <!-- Canvas will be inserted here -->
-                <canvas id="skills-canvas" class="block w-full h-full"></canvas>
-                
-                <!-- Gravity Controls -->
-                <div class="absolute bottom-4 left-4 flex gap-2 z-20">
-                    <button onclick="shakeSkills()" class="px-3 py-1.5 text-xs font-mono bg-gray-800/90 text-purple-400 rounded-lg border border-gray-700 hover:border-purple-500/50 hover:bg-gray-700 transition-all">
-                        <i class="fas fa-random mr-1"></i> Shake
-                    </button>
-                    <button onclick="resetSkills()" class="px-3 py-1.5 text-xs font-mono bg-gray-800/90 text-cyan-400 rounded-lg border border-gray-700 hover:border-cyan-500/50 hover:bg-gray-700 transition-all">
-                        <i class="fas fa-redo mr-1"></i> Reset
-                    </button>
-                </div>
-                
-                <!-- Skill Count -->
-                <div class="absolute top-4 right-4 px-3 py-1.5 text-xs font-mono bg-gray-800/90 text-gray-400 rounded-lg border border-gray-700 z-20">
-                    <span id="skill-count">30</span> Skills
-                </div>
-
-                <!-- Skills Legend -->
-                <div class="absolute bottom-4 right-4 flex flex-wrap gap-3 text-xs text-gray-500 z-20">
-                    <div class="flex items-center gap-1.5 bg-gray-800/80 px-2 py-1 rounded">
-                        <div class="w-2 h-2 rounded-full bg-yellow-500"></div>
-                        <span>Languages</span>
-                    </div>
-                    <div class="flex items-center gap-1.5 bg-gray-800/80 px-2 py-1 rounded">
-                        <div class="w-2 h-2 rounded-full bg-cyan-500"></div>
-                        <span>DevOps</span>
-                    </div>
-                    <div class="flex items-center gap-1.5 bg-gray-800/80 px-2 py-1 rounded">
-                        <div class="w-2 h-2 rounded-full bg-purple-500"></div>
-                        <span>Frameworks</span>
-                    </div>
-                    <div class="flex items-center gap-1.5 bg-gray-800/80 px-2 py-1 rounded">
-                        <div class="w-2 h-2 rounded-full bg-green-500"></div>
-                        <span>Cloud</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Matter.js Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
-    
-    <!-- Physics Skills Script -->
-    <script>
-        (function() {
-            // Skills Data with categories
-            const skillsData = [
-                // Languages (Yellow/Orange)
-                { name: 'Python', color: '#f59e0b', textColor: '#000' },
-                { name: 'Java', color: '#ea580c', textColor: '#fff' },
-                { name: 'JavaScript', color: '#eab308', textColor: '#000' },
-                { name: 'TypeScript', color: '#3b82f6', textColor: '#fff' },
-                { name: 'SQL', color: '#f97316', textColor: '#000' },
-                { name: 'Bash', color: '#84cc16', textColor: '#000' },
-                
-                // DevOps & Tools (Cyan/Blue)
-                { name: 'GitHub', color: '#6366f1', textColor: '#fff' },
-                { name: 'GitHub Copilot', color: '#8b5cf6', textColor: '#fff' },
-                { name: 'Jenkins', color: '#06b6d4', textColor: '#000' },
-                { name: 'Docker', color: '#0ea5e9', textColor: '#fff' },
-                { name: 'Kubernetes', color: '#3b82f6', textColor: '#fff' },
-                { name: 'Git', color: '#f43f5e', textColor: '#fff' },
-                { name: 'Linux', color: '#facc15', textColor: '#000' },
-                { name: 'VS Code', color: '#0284c7', textColor: '#fff' },
-                
-                // Frameworks (Purple/Pink)
-                { name: 'React', color: '#22d3ee', textColor: '#000' },
-                { name: 'Node.js', color: '#22c55e', textColor: '#000' },
-                { name: 'Tailwind', color: '#06b6d4', textColor: '#000' },
-                { name: 'Selenium', color: '#43a047', textColor: '#fff' },
-                { name: 'REST API', color: '#a855f7', textColor: '#fff' },
-                { name: 'Flask', color: '#1e293b', textColor: '#fff' },
-                
-                // Databases & Cloud (Green)
-                { name: 'MySQL', color: '#0284c7', textColor: '#fff' },
-                { name: 'PostgreSQL', color: '#3b82f6', textColor: '#fff' },
-                { name: 'MongoDB', color: '#22c55e', textColor: '#000' },
-                { name: 'AWS', color: '#ff9900', textColor: '#000' },
-                { name: 'Azure', color: '#0ea5e9', textColor: '#fff' },
-                
-                // AI & Others
-                { name: 'ChatGPT', color: '#10b981', textColor: '#000' },
-                { name: 'Jira', color: '#0052cc', textColor: '#fff' },
-                { name: 'Postman', color: '#ff6c37', textColor: '#000' },
-                { name: 'Pytest', color: '#0ea5e9', textColor: '#fff' },
-                { name: 'CI/CD', color: '#8b5cf6', textColor: '#fff' },
-            ];
-
-            // Matter.js modules
-            const Engine = Matter.Engine,
-                  Render = Matter.Render,
-                  Runner = Matter.Runner,
-                  Bodies = Matter.Bodies,
-                  Body = Matter.Body,
-                  Composite = Matter.Composite,
-                  Mouse = Matter.Mouse,
-                  MouseConstraint = Matter.MouseConstraint,
-                  Events = Matter.Events;
-
-            let engine, render, runner, mouseConstraint;
-            let skillBodies = [];
-            let isInitialized = false;
-
-            const canvas = document.getElementById('skills-canvas');
-            const container = document.getElementById('skills-container');
-
-            function initPhysics() {
-                if (!container || !canvas) return;
-                
-                // Clean up previous instance
-                if (isInitialized) {
-                    if (runner) Runner.stop(runner);
-                    if (render) {
-                        Render.stop(render);
-                        render.canvas = null;
-                        render.context = null;
-                    }
-                    if (engine) {
-                        Composite.clear(engine.world);
-                        Engine.clear(engine);
-                    }
-                }
-
-                // Get container dimensions
-                const rect = container.getBoundingClientRect();
-                const width = rect.width;
-                const height = rect.height;
-                
-                if (width === 0 || height === 0) {
-                    setTimeout(initPhysics, 100);
-                    return;
-                }
-
-                // Create engine with gravity
-                engine = Engine.create();
-                engine.gravity.y = 0.8;
-                engine.gravity.x = 0;
-
-                // Create renderer
-                render = Render.create({
-                    element: container,
-                    canvas: canvas,
-                    engine: engine,
-                    options: {
-                        width: width,
-                        height: height,
-                        wireframes: false,
-                        background: 'transparent',
-                        pixelRatio: 1 // Force pixelRatio to 1 for proper mouse interaction
-                    }
-                });
-
-                // Set canvas size explicitly
-                canvas.width = width;
-                canvas.height = height;
-                canvas.style.width = width + 'px';
-                canvas.style.height = height + 'px';
-
-                // Create walls (invisible boundaries)
-                const wallOptions = { 
-                    isStatic: true, 
-                    render: { visible: false },
-                    friction: 0.1
-                };
-                
-                const walls = [
-                    // Bottom wall
-                    Bodies.rectangle(width / 2, height + 25, width + 100, 50, wallOptions),
-                    // Left wall
-                    Bodies.rectangle(-25, height / 2, 50, height + 100, wallOptions),
-                    // Right wall
-                    Bodies.rectangle(width + 25, height / 2, 50, height + 100, wallOptions),
-                    // Top wall
-                    Bodies.rectangle(width / 2, -25, width + 100, 50, wallOptions)
-                ];
-                Composite.add(engine.world, walls);
-
-                // Create skill capsules
-                skillBodies = [];
-                const pillHeight = 32;
-                const radius = pillHeight / 2;
-
-                skillsData.forEach((skill, index) => {
-                    const pillWidth = Math.max(70, skill.name.length * 9 + 24);
-                    
-                    // Spread pills across the top
-                    const cols = Math.ceil(Math.sqrt(skillsData.length));
-                    const row = Math.floor(index / cols);
-                    const col = index % cols;
-                    const spacing = width / (cols + 1);
-                    
-                    const x = spacing * (col + 1) + (Math.random() - 0.5) * 40;
-                    const y = 60 + row * 50 + (Math.random() - 0.5) * 30;
-                    
-                    // Create pill shape
-                    const pill = Bodies.rectangle(x, y, pillWidth, pillHeight, {
-                        chamfer: { radius: radius },
-                        restitution: 0.5,
-                        friction: 0.3,
-                        frictionAir: 0.02,
-                        density: 0.001,
-                        render: {
-                            fillStyle: skill.color,
-                            strokeStyle: 'rgba(255,255,255,0.2)',
-                            lineWidth: 1
-                        },
-                        label: skill.name,
-                        skillData: skill,
-                        pillWidth: pillWidth
-                    });
-                    
-                    skillBodies.push(pill);
-                });
-
-                Composite.add(engine.world, skillBodies);
-
-                // Create mouse constraint for dragging
-                const mouse = Mouse.create(canvas);
-                
-                // Fix mouse offset for scrolled pages
-                mouse.element.removeEventListener('mousewheel', mouse.mousewheel);
-                mouse.element.removeEventListener('DOMMouseScroll', mouse.mousewheel);
-                
-                mouseConstraint = MouseConstraint.create(engine, {
-                    mouse: mouse,
-                    constraint: {
-                        stiffness: 0.2,
-                        render: { visible: false }
-                    }
-                });
-
-                Composite.add(engine.world, mouseConstraint);
-                render.mouse = mouse;
-
-                // Fix mouse position for canvas offset
-                Events.on(mouseConstraint, 'mousedown', function(event) {
-                    const mousePosition = event.mouse.position;
-                });
-
-                // Custom text rendering
-                Events.on(render, 'afterRender', function() {
-                    const ctx = render.context;
-                    
-                    skillBodies.forEach(body => {
-                        const pos = body.position;
-                        const angle = body.angle;
-                        const skill = body.skillData;
-                        
-                        ctx.save();
-                        ctx.translate(pos.x, pos.y);
-                        ctx.rotate(angle);
-                        
-                        // Text shadow for better readability
-                        ctx.font = 'bold 11px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
-                        ctx.textAlign = 'center';
-                        ctx.textBaseline = 'middle';
-                        
-                        // Shadow
-                        ctx.fillStyle = 'rgba(0,0,0,0.3)';
-                        ctx.fillText(skill.name, 1, 1);
-                        
-                        // Main text
-                        ctx.fillStyle = skill.textColor;
-                        ctx.fillText(skill.name, 0, 0);
-                        
-                        ctx.restore();
-                    });
-                });
-
-                // Run engine and renderer
-                runner = Runner.create();
-                Runner.run(runner, engine);
-                Render.run(render);
-                
-                isInitialized = true;
-
-                // Update skill count
-                document.getElementById('skill-count').textContent = skillsData.length;
-            }
-
-            // Shake function - exposed globally
-            window.shakeSkills = function() {
-                if (!skillBodies) return;
-                skillBodies.forEach(body => {
-                    Body.setVelocity(body, {
-                        x: (Math.random() - 0.5) * 25,
-                        y: -Math.random() * 15 - 5
-                    });
-                    Body.setAngularVelocity(body, (Math.random() - 0.5) * 0.4);
-                });
-            };
-
-            // Reset function - exposed globally
-            window.resetSkills = function() {
-                if (!container || !skillBodies) return;
-                const width = container.getBoundingClientRect().width;
-                const cols = Math.ceil(Math.sqrt(skillsData.length));
-                const spacing = width / (cols + 1);
-                
-                skillBodies.forEach((body, index) => {
-                    const row = Math.floor(index / cols);
-                    const col = index % cols;
-                    const x = spacing * (col + 1);
-                    const y = 60 + row * 50;
-                    
-                    Body.setPosition(body, { x, y });
-                    Body.setVelocity(body, { x: 0, y: 0 });
-                    Body.setAngle(body, 0);
-                    Body.setAngularVelocity(body, 0);
-                });
-            };
-
-            // Initialize when ready
-            function tryInit() {
-                if (document.getElementById('skills-container')) {
-                    setTimeout(initPhysics, 300);
-                } else {
-                    setTimeout(tryInit, 100);
-                }
-            }
-
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', tryInit);
-            } else {
-                tryInit();
-            }
-
-            // Handle resize with debounce
-            let resizeTimeout;
-            window.addEventListener('resize', function() {
-                clearTimeout(resizeTimeout);
-                resizeTimeout = setTimeout(function() {
-                    if (isInitialized) {
-                        initPhysics();
-                    }
-                }, 300);
-            });
-        })();
-    </script>
-    <!-- ==================== END PHYSICS SKILLS SECTION ==================== -->
-
-
     
     <!-- ============ PROFESSIONAL OVERVIEW - ISOMETRIC 3D ============ -->
     <section id="professional" class="py-16 relative overflow-hidden bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900">
@@ -2352,12 +1983,8 @@ aws s3 sync ./dist</pre>
 
         <div class="relative z-10 max-w-7xl mx-auto px-6">
             <!-- Section Header -->
-            <div class="text-center mb-16">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-4">
-                    <span class="w-2 h-2 rounded-full bg-purple-400 animate-pulse"></span>
-                    <span class="text-xs font-mono text-purple-300 tracking-wider">FEATURED WORK</span>
-                </div>
-                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-3">
                     Project <span class="bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">Showcase</span>
                 </h2>
                 <p class="text-gray-400 max-w-2xl mx-auto">Interactive portfolios with modern tech stacks</p>
@@ -2368,7 +1995,7 @@ aws s3 sync ./dist</pre>
                 <div class="grid lg:grid-cols-12 gap-8 items-start">
                     
                     <!-- Left: Category Card (Personal Portfolio) -->
-                    <div class="lg:col-span-4 relative z-20 project-category-card opacity-0 lg:-ml-16" style="transform: translateX(-100px);">
+                    <div class="lg:col-span-4 relative z-20 project-category-card animate-from-left opacity-0 lg:-ml-16" style="transform: translateX(-100px);">
                         <div class="sticky top-24">
                             <!-- 3D Category Card with Tilt Effect -->
                             <div class="relative group" style="transform: perspective(1500px) rotateY(15deg) rotateX(3deg) scale(0.95); transform-style: preserve-3d;">
@@ -2390,12 +2017,15 @@ aws s3 sync ./dist</pre>
                                     <!-- Gradient Orb -->
                                     <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-pink-500/30 to-purple-500/30 rounded-full blur-3xl"></div>
                                     
+                                    <!-- Background Blend -->
+                                    <div class="absolute inset-0 bg-gradient-to-tr from-pink-500/5 via-transparent to-purple-500/5"></div>
+                                    
                                     <!-- Content -->
                                     <div class="relative z-10">
                                         <!-- Category Badge -->
                                         <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-pink-500/20 border border-pink-500/30 rounded-full mb-4">
                                             <div class="w-2 h-2 rounded-full bg-pink-500 animate-pulse"></div>
-                                            <span class="text-xs font-mono text-pink-300 uppercase tracking-wider">Category</span>
+                                            <span class="text-xs font-mono text-pink-300 uppercase tracking-wider">Project Type</span>
                                         </div>
                                         
                                         <!-- Title -->
@@ -2407,30 +2037,73 @@ aws s3 sync ./dist</pre>
                                         <div class="h-1 w-16 bg-gradient-to-r from-pink-500 via-purple-500 to-transparent rounded-full mb-4"></div>
                                         
                                         <!-- Description -->
-                                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
-                                            Showcase projects featuring modern web technologies, creative designs, and innovative solutions built for real-world applications.
+                                        <p class="text-gray-400 text-xs leading-relaxed mb-4">
+                                            Modern web portfolios with creative designs.
                                         </p>
                                         
                                         <!-- Stats -->
-                                        <div class="grid grid-cols-2 gap-4 mb-6">
-                                            <div class="bg-gray-800/50 rounded-lg p-3 border border-gray-700/50">
-                                                <div class="text-2xl font-bold text-pink-400 mb-1">4</div>
-                                                <div class="text-xs text-gray-500 uppercase tracking-wider">Projects</div>
+                                        <div class="grid grid-cols-2 gap-3 mb-4">
+                                            <div class="bg-gray-800/50 rounded-lg p-2 border border-gray-700/50">
+                                                <div class="text-xl font-bold text-pink-400">2</div>
+                                                <div class="text-[10px] text-gray-500 uppercase tracking-wider">Projects</div>
                                             </div>
-                                            <div class="bg-gray-800/50 rounded-lg p-3 border border-gray-700/50">
-                                                <div class="text-2xl font-bold text-purple-400 mb-1">100%</div>
-                                                <div class="text-xs text-gray-500 uppercase tracking-wider">Success</div>
+                                            <div class="bg-gray-800/50 rounded-lg p-2 border border-gray-700/50">
+                                                <div class="text-xl font-bold text-purple-400">5+</div>
+                                                <div class="text-[10px] text-gray-500 uppercase tracking-wider">Tech Stack</div>
                                             </div>
                                         </div>
                                         
                                         <!-- Tech Focus -->
                                         <div class="space-y-2">
-                                            <div class="text-xs text-gray-500 uppercase tracking-wider mb-2">Tech Focus</div>
-                                            <div class="flex flex-wrap gap-2">
-                                                <span class="px-2 py-1 bg-blue-500/10 border border-blue-500/20 rounded text-xs text-blue-400">Full Stack</span>
-                                                <span class="px-2 py-1 bg-green-500/10 border border-green-500/20 rounded text-xs text-green-400">DevOps</span>
-                                                <span class="px-2 py-1 bg-orange-500/10 border border-orange-500/20 rounded text-xs text-orange-400">Cloud</span>
-                                                <span class="px-2 py-1 bg-purple-500/10 border border-purple-500/20 rounded text-xs text-purple-400">Modern UI</span>
+                                            <div class="text-[10px] text-gray-500 uppercase tracking-wider mb-2">Tech Focus</div>
+                                            <div class="flex flex-wrap gap-3">
+                                                <!-- HTML -->
+                                                <div class="flex items-center gap-1.5 px-2 py-1 bg-orange-500/10 border border-orange-500/20 rounded" title="HTML5">
+                                                    <svg class="w-4 h-4 text-orange-500" fill="currentColor" viewBox="0 0 24 24">
+                                                        <path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"/>
+                                                    </svg>
+                                                    <span class="text-xs text-orange-400">HTML</span>
+                                                </div>
+                                                
+                                                <!-- CSS -->
+                                                <div class="flex items-center gap-1.5 px-2 py-1 bg-blue-500/10 border border-blue-500/20 rounded" title="CSS3">
+                                                    <svg class="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
+                                                        <path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622 10.125.002-.255 2.716h-6.64l.24 2.573h6.182l-.366 3.523-2.91.804-2.956-.81-.188-2.11h-2.61l.29 3.855L12 19.288l5.373-1.53L18.59 4.414z"/>
+                                                    </svg>
+                                                    <span class="text-xs text-blue-400">CSS</span>
+                                                </div>
+                                                
+                                                <!-- JavaScript -->
+                                                <div class="flex items-center gap-1.5 px-2 py-1 bg-yellow-500/10 border border-yellow-500/20 rounded" title="JavaScript">
+                                                    <svg class="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 24 24">
+                                                        <path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"/>
+                                                    </svg>
+                                                    <span class="text-xs text-yellow-400">JS</span>
+                                                </div>
+                                                
+                                                <!-- React -->
+                                                <div class="flex items-center gap-1.5 px-2 py-1 bg-cyan-500/10 border border-cyan-500/20 rounded" title="React">
+                                                    <svg class="w-4 h-4 text-cyan-400" fill="currentColor" viewBox="0 0 24 24">
+                                                        <path d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44-.96-.236-2.006-.417-3.107-.534-.66-.905-1.345-1.727-2.035-2.447 1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442-1.107.117-2.154.298-3.113.538-.112-.49-.195-.964-.254-1.42-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.345-.034-.46 0-.915.01-1.36.034.44-.572.895-1.096 1.345-1.565zM12 8.1c.74 0 1.477.034 2.202.093.406.582.802 1.203 1.183 1.86.372.64.71 1.29 1.018 1.946-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87-.728.063-1.466.098-2.21.098-.74 0-1.477-.035-2.202-.093-.406-.582-.802-1.204-1.183-1.86-.372-.64-.71-1.29-1.018-1.946.303-.657.646-1.313 1.013-1.954.38-.66.773-1.286 1.18-1.868.728-.064 1.466-.098 2.21-.098zm-3.635.254c-.24.377-.48.763-.704 1.16-.225.39-.435.782-.635 1.174-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0c.695.103 1.365.23 2.006.387-.18.632-.405 1.282-.66 1.933-.2-.39-.41-.783-.64-1.174-.225-.392-.465-.774-.705-1.146zm3.063.675c.484.15.944.317 1.375.498 1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493-.28-.958-.646-1.956-1.1-2.98.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98-.45 1.017-.812 2.01-1.086 2.964-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474 0-.768 1.12-1.742 2.852-2.476.42-.18.88-.342 1.356-.494zm11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39.24-.375.48-.762.705-1.158.225-.39.435-.788.636-1.18zm-9.945.02c.2.392.41.783.64 1.175.23.39.465.772.705 1.143-.695-.102-1.365-.23-2.006-.386.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295-.22-.005-.406-.05-.553-.132-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64c.44.02.89.034 1.345.034.46 0 .915-.01 1.36-.034-.44.572-.895 1.095-1.345 1.565-.455-.47-.91-.993-1.36-1.565z"/>
+                                                    </svg>
+                                                    <span class="text-xs text-cyan-400">React</span>
+                                                </div>
+                                                
+                                                <!-- Python -->
+                                                <div class="flex items-center gap-1.5 px-2 py-1 bg-blue-500/10 border border-blue-500/20 rounded" title="Python">
+                                                    <svg class="w-4 h-4 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+                                                        <path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09z"/>
+                                                    </svg>
+                                                    <span class="text-xs text-blue-400">Python</span>
+                                                </div>
+                                                
+                                                <!-- Database -->
+                                                <div class="flex items-center gap-1.5 px-2 py-1 bg-green-500/10 border border-green-500/20 rounded" title="Database">
+                                                    <svg class="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 24 24">
+                                                        <path d="M12 3C7.58 3 4 4.79 4 7s3.58 4 8 4 8-1.79 8-4-3.58-4-8-4zM4 9v3c0 2.21 3.58 4 8 4s8-1.79 8-4V9c0 2.21-3.58 4-8 4s-8-1.79-8-4zm0 5v3c0 2.21 3.58 4 8 4s8-1.79 8-4v-3c0 2.21-3.58 4-8 4s-8-1.79-8-4z"/>
+                                                    </svg>
+                                                    <span class="text-xs text-green-400">DB</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -2465,70 +2138,121 @@ aws s3 sync ./dist</pre>
                 <div class="container mx-auto px-6 relative z-10">
                     <div class="grid lg:grid-cols-12 gap-8 items-start">
                         
-                        <!-- Left: Category Card -->
-                        <div class="lg:col-span-4 sticky top-24 lg:-ml-16">
-                            <div class="project-category-card relative bg-gradient-to-br from-gray-900/80 via-gray-800/60 to-black/80 backdrop-blur-xl rounded-xl p-5 border border-cyan-500/20 shadow-2xl overflow-hidden transform transition-all duration-700 hover:scale-105"
-                                 style="transform: perspective(1500px) rotateY(15deg) rotateX(3deg) scale(0.95); transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1); opacity: 0; transform: translateX(-100px);">
-                                
-                                <!-- Background Pattern -->
-                                <div class="absolute inset-0 opacity-5">
-                                    <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, cyan 1px, transparent 0); background-size: 40px 40px;"></div>
-                                </div>
-                                
-                                <!-- Gradient Orbs -->
-                                <div class="absolute -top-20 -right-20 w-40 h-40 bg-cyan-500/20 rounded-full blur-3xl"></div>
-                                <div class="absolute -bottom-20 -left-20 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl"></div>
-                                
-                                <!-- Content -->
-                                <div class="relative z-10">
-                                    <!-- Category Badge -->
-                                    <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-cyan-500/20 border border-cyan-500/30 rounded-full mb-4">
-                                        <div class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></div>
-                                        <span class="text-xs font-mono text-cyan-300 uppercase tracking-wider">Business Website</span>
-                                    </div>
-                                    
-                                    <!-- Title -->
-                                    <h3 class="text-xl font-bold text-white mb-1 leading-tight">
-                                        After School
-                                    </h3>
-                                    <h3 class="text-xl font-bold text-white mb-4 leading-tight">
-                                        Program Platform
-                                    </h3>
-                                    
-                                    <!-- Stats Grid -->
-                                    <div class="grid grid-cols-2 gap-3 mb-4">
-                                        <div class="bg-cyan-500/10 rounded-lg p-3 border border-cyan-500/20">
-                                            <div class="text-xl font-bold text-cyan-400">02</div>
-                                            <div class="text-[10px] text-gray-400 uppercase tracking-wide">Project ID</div>
-                                        </div>
-                                        <div class="bg-cyan-500/10 rounded-lg p-3 border border-cyan-500/20">
-                                            <div class="text-xl font-bold text-green-400">Live</div>
-                                            <div class="text-[10px] text-gray-400 uppercase tracking-wide">Status</div>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Tech Badges -->
-                                    <div class="flex flex-wrap gap-1.5">
-                                        <span class="px-2 py-1 bg-green-500/10 rounded text-[10px] text-green-400 border border-green-500/20 font-mono">Vue.js</span>
-                                        <span class="px-2 py-1 bg-blue-500/10 rounded text-[10px] text-blue-400 border border-blue-500/20 font-mono">Python</span>
-                                        <span class="px-2 py-1 bg-cyan-500/10 rounded text-[10px] text-cyan-400 border border-cyan-500/20 font-mono">PostgreSQL</span>
-                                    </div>
-                                </div>
-                                
-                                <!-- Decorative Corner -->
-                                <div class="absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-tl from-cyan-500/10 to-transparent rounded-tl-full"></div>
-                            </div>
-                        </div>
-                        
-                        <!-- Right: Project Showcase Text -->
+                        <!-- Left: Empty/Content Area -->
                         <div class="lg:col-span-8 relative z-10">
                             <div class="relative">
                                 
-                                <!-- Project Description Content -->
-                                <div id="businessShowcaseText" class="relative z-10">
-                                    <p class="text-gray-400">Business website showcase content here.</p>
-                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Right: Category Card -->
+                        <div class="lg:col-span-4 sticky top-24 project-category-card animate-from-right opacity-0" style="transform: translateX(100px);">
+                            <!-- 3D Category Card with Tilt Effect -->
+                            <div class="relative group" style="transform: perspective(1500px) rotateY(-15deg) rotateX(3deg) scale(0.95); transform-style: preserve-3d;">
+                                <!-- Card Shadow -->
+                                <div class="absolute -inset-2 bg-gradient-to-r from-cyan-600/20 via-blue-600/20 to-cyan-600/20 rounded-2xl blur-xl opacity-75 group-hover:opacity-100 transition-opacity"></div>
                                 
+                                <!-- Main Card -->
+                                <div class="relative bg-gradient-to-br from-gray-900 via-gray-800 to-black rounded-2xl p-8 border-2 border-gray-700 shadow-2xl overflow-hidden">
+                                    <!-- Background Pattern -->
+                                    <div class="absolute inset-0 opacity-5">
+                                        <svg width="100%" height="100%">
+                                            <pattern id="business-dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                                                <circle cx="2" cy="2" r="1" fill="white"/>
+                                            </pattern>
+                                            <rect width="100%" height="100%" fill="url(#business-dots)"/>
+                                        </svg>
+                                    </div>
+                                    
+                                    <!-- Gradient Orb -->
+                                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-cyan-500/30 to-blue-500/30 rounded-full blur-3xl"></div>
+                                    
+                                    <!-- Background Blend -->
+                                    <div class="absolute inset-0 bg-gradient-to-tr from-cyan-500/5 via-transparent to-blue-500/5"></div>
+                                    
+                                    <!-- Content -->
+                                    <div class="relative z-10">
+                                        <!-- Category Badge -->
+                                        <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-cyan-500/20 border border-cyan-500/30 rounded-full mb-4">
+                                            <div class="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></div>
+                                            <span class="text-xs font-mono text-cyan-300 uppercase tracking-wider">Project Type</span>
+                                        </div>
+                                        
+                                        <!-- Title -->
+                                        <h3 class="text-3xl font-black text-white mb-2 bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent">
+                                            Business Website
+                                        </h3>
+                                        
+                                        <!-- Divider -->
+                                        <div class="h-1 w-16 bg-gradient-to-r from-cyan-500 via-blue-500 to-transparent rounded-full mb-4"></div>
+                                        
+                                        <!-- Description -->
+                                        <p class="text-gray-400 text-xs leading-relaxed mb-4">
+                                            Professional business sites with modern design.
+                                        </p>
+                                        
+                                        <!-- Stats -->
+                                        <div class="grid grid-cols-2 gap-3 mb-4">
+                                            <div class="bg-gray-800/50 rounded-lg p-2 border border-gray-700/50">
+                                                <div class="text-xl font-bold text-cyan-400">1</div>
+                                                <div class="text-[10px] text-gray-500 uppercase tracking-wider">Projects</div>
+                                            </div>
+                                            <div class="bg-gray-800/50 rounded-lg p-2 border border-gray-700/50">
+                                                <div class="text-xl font-bold text-blue-400">5+</div>
+                                                <div class="text-[10px] text-gray-500 uppercase tracking-wider">Tech Stack</div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Tech Focus -->
+                                        <div class="space-y-2">
+                                            <div class="text-[10px] text-gray-500 uppercase tracking-wider mb-2">Tech Focus</div>
+                                            <div class="flex flex-wrap gap-3">
+                                                <!-- Vue.js -->
+                                                <div class="flex items-center gap-1.5 px-2 py-1 bg-green-500/10 border border-green-500/20 rounded" title="Vue.js">
+                                                    <svg class="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 24 24">
+                                                        <path d="M24 1.61h-9.94L12 5.16 9.94 1.61H0l12 20.78zM12 14.08L5.16 2.23h4.43L12 6.41l2.41-4.18h4.43z"/>
+                                                    </svg>
+                                                    <span class="text-xs text-green-400">Vue.js</span>
+                                                </div>
+                                                
+                                                <!-- Python -->
+                                                <div class="flex items-center gap-1.5 px-2 py-1 bg-blue-500/10 border border-blue-500/20 rounded" title="Python">
+                                                    <svg class="w-4 h-4 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+                                                        <path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09z"/>
+                                                    </svg>
+                                                    <span class="text-xs text-blue-400">Python</span>
+                                                </div>
+                                                
+                                                <!-- PostgreSQL -->
+                                                <div class="flex items-center gap-1.5 px-2 py-1 bg-cyan-500/10 border border-cyan-500/20 rounded" title="PostgreSQL">
+                                                    <svg class="w-4 h-4 text-cyan-400" fill="currentColor" viewBox="0 0 24 24">
+                                                        <path d="M23.559 14.691c-.103-.229-.343-.29-.619-.218l-.615.183c.168-.393.301-.787.322-1.182.028-.509-.196-.987-.644-1.379-.403-.352-.913-.62-1.477-.834.21-.207.381-.433.511-.68.282-.534.343-1.127.181-1.756-.164-.639-.47-1.172-.91-1.586-.439-.413-.998-.68-1.663-.794-.654-.112-1.374-.025-2.139.258-.017-.047-.032-.095-.052-.14-.204-.47-.516-.8-.927-1.001-.41-.2-.893-.267-1.432-.198-.543.07-1.027.234-1.439.488-.263.163-.504.366-.722.607l-.005-.005a4.988 4.988 0 00-.972-.936c-.386-.28-.8-.497-1.232-.648a4.003 4.003 0 00-1.262-.254c-.492-.014-.972.056-1.434.209-.455.151-.895.382-1.31.687-.465.344-.873.754-1.217 1.222-.345.47-.618.993-.817 1.561a7.366 7.366 0 00-.36 1.691c-.136.127-.273.252-.407.383-.432.424-.801.883-1.103 1.376a6.06 6.06 0 00-.65 1.535 5.176 5.176 0 00-.14 1.631c.043.527.15 1.029.32 1.505l.044.124c-.2.235-.368.493-.507.77-.26.524-.351 1.13-.272 1.793.03.26.085.527.16.8.077.274.17.544.282.809a15.16 15.16 0 001.232 2.396c.234.37.481.707.739 1.01l.097.11c-.185.27-.34.561-.466.872-.136.337-.215.727-.238 1.143a2.64 2.64 0 00.17 1.132c.137.346.344.651.616.911.274.261.62.47 1.033.626.412.155.883.246 1.409.273.527.027 1.12-.017 1.771-.133.653-.116 1.303-.331 1.944-.643l.045-.022c.13.187.272.362.428.522.373.38.816.663 1.32.844a4.55 4.55 0 001.594.285c.522 0 1.067-.08 1.625-.241a8.59 8.59 0 001.513-.573c.473-.223.9-.47 1.277-.739.282-.202.527-.41.735-.621.206.183.425.356.659.517.401.277.85.508 1.341.693a8.137 8.137 0 001.411.392c.46.09.883.136 1.263.136.393 0 .746-.046 1.059-.14.34-.102.628-.258.861-.466.232-.208.411-.464.535-.766a2.82 2.82 0 00.217-.985 5.016 5.016 0 00-.08-1.155 6.74 6.74 0 00-.265-.964l-.107-.316c.35-.17.63-.38.838-.625a1.87 1.87 0 00.414-.856c.068-.324.068-.663 0-1.01-.065-.34-.2-.676-.401-1.004-.08-.13-.217-.322-.409-.572l-.42-.563-.423-.556-.204-.262.316-.095c.227-.068.438-.15.633-.247.195-.097.363-.202.504-.315.141-.113.249-.236.324-.37.075-.134.103-.287.085-.458z"/>
+                                                    </svg>
+                                                    <span class="text-xs text-cyan-400">PostgreSQL</span>
+                                                </div>
+                                                
+                                                <!-- Node.js -->
+                                                <div class="flex items-center gap-1.5 px-2 py-1 bg-green-500/10 border border-green-500/20 rounded" title="Node.js">
+                                                    <svg class="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 24 24">
+                                                        <path d="M11.998 24c-.321 0-.641-.084-.922-.247l-2.936-1.737c-.438-.245-.224-.332-.08-.383.585-.203.703-.25 1.328-.604.065-.037.151-.023.218.017l2.256 1.339c.082.045.197.045.272 0l8.795-5.076c.082-.047.134-.141.134-.238V6.921c0-.099-.053-.192-.137-.242l-8.791-5.072c-.081-.047-.189-.047-.271 0L3.075 6.68c-.085.05-.139.143-.139.242v10.15c0 .097.054.189.139.235l2.409 1.392c1.307.654 2.108-.116 2.108--.89V7.787c0-.142.114-.253.256-.253h1.115c.139 0 .255.112.255.253v10.021c0 1.745-.95 2.745-2.604 2.745-.508 0-.909 0-2.026-.551L2.28 18.675c-.57-.329-.922-.944-.922-1.604V6.921c0-.659.353-1.275.922-1.603l8.795-5.082c.557-.315 1.296-.315 1.848 0l8.794 5.082c.57.329.924.944.924 1.603v10.15c0 .659-.354 1.273-.924 1.604l-8.794 5.078c-.28.163-.599.247-.925.247zm7.46-19.62c-3.644 0-4.405 1.674-4.405 3.078 0 .141.113.253.255.253h1.138c.127 0 .233-.092.252-.217.172-1.164.684-1.753 2.761-1.753 1.699 0 2.426.385 2.426 1.288 0 .52-.206.907-2.841 1.168-2.196.218-3.552.701-3.552 2.444 0 1.61 1.356 2.571 3.625 2.571 2.552 0 3.781-.887 3.937-2.789.006-.068-.016-.135-.062-.186-.045-.051-.11-.08-.177-.08h-1.141c-.118 0-.221.086-.246.201-.272 1.217-.935 1.607-2.339 1.607-1.722 0-1.924-.755-1.924-1.319 0-.588.236-.761 2.755-1.094 2.49-.329 3.639-.797 3.639-2.548 0-1.744-1.453-2.774-3.988-2.774z"/>
+                                                    </svg>
+                                                    <span class="text-xs text-green-400">Node.js</span>
+                                                </div>
+                                                
+                                                <!-- REST API -->
+                                                <div class="flex items-center gap-1.5 px-2 py-1 bg-purple-500/10 border border-purple-500/20 rounded" title="REST API">
+                                                    <svg class="w-4 h-4 text-purple-400" fill="currentColor" viewBox="0 0 24 24">
+                                                        <path d="M12 0C5.383 0 0 5.383 0 12s5.383 12 12 12 12-5.383 12-12S18.617 0 12 0zm0 2.182c5.418 0 9.818 4.4 9.818 9.818S17.418 21.818 12 21.818 2.182 17.418 2.182 12 6.582 2.182 12 2.182zm-1.273 3.273v4.364h-4.09v2.182h4.09v4.363h2.182V11.91h4.364V9.818h-4.364V5.455z"/>
+                                                    </svg>
+                                                    <span class="text-xs text-purple-400">REST API</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Decorative Corner -->
+                                    <div class="absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-tl from-cyan-500/10 to-transparent rounded-tl-full"></div>
+                                </div>
                             </div>
                         </div>
                         
@@ -2536,163 +2260,1256 @@ aws s3 sync ./dist</pre>
                 </div>
             </div>
 
+            </div>
+            </div>
+        </div>
+        
+        <!-- Minimal Project Count -->
+        <div class="max-w-7xl mx-auto px-6 pt-16">
+            <div class="flex items-center justify-center gap-8 text-sm">
+                <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-pink-400"></span>
+                    <span class="text-gray-400">Personal Portfolio:</span>
+                    <span class="text-white font-semibold">01</span>
+                </div>
+                <div class="w-px h-4 bg-gray-700"></div>
+                <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+                    <span class="text-gray-400">Business:</span>
+                    <span class="text-white font-semibold">01</span>
+                </div>
             </div>
         </div>
     </section>
     <!-- ======================= END ZIGZAG PROJECT BANNERS ======================= -->
 
-    <!-- ======================= CATEGORY SHOWCASE SECTION ======================= -->
-    <section id="category-showcase" class="relative py-24 bg-gradient-to-b from-black via-gray-950 to-black overflow-hidden">
+    <!-- ==================== FUN ZONE SECTION ==================== -->
+    <section id="fun-zone" class="relative py-8 bg-gradient-to-b from-black via-gray-950 to-gray-900 overflow-hidden">
         <style>
-            @keyframes minimal-glow {
-                0%, 100% { box-shadow: 0 0 20px rgba(var(--cat-color), 0.1); }
-                50% { box-shadow: 0 0 30px rgba(var(--cat-color), 0.2); }
+            .fun-tab {
+                position: relative;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
             }
             
-            @keyframes count-pulse {
-                0%, 100% { transform: scale(1); }
-                50% { transform: scale(1.05); }
+            .fun-tab-circle {
+                position: relative;
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
             }
             
-            @keyframes slide-in {
-                from { opacity: 0; transform: translateY(10px); }
-                to { opacity: 1; transform: translateY(0); }
+            .fun-tab-circle::before {
+                content: '';
+                position: absolute;
+                inset: -3px;
+                border-radius: 50%;
+                background: conic-gradient(from 0deg, transparent, currentColor, transparent);
+                opacity: 0;
+                transition: all 0.3s ease;
+                animation: spin 3s linear infinite;
+                animation-play-state: paused;
             }
             
-            .category-box {
-                --cat-color: 139, 92, 246;
-                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-                animation: minimal-glow 4s ease-in-out infinite;
+            @keyframes spin {
+                to { transform: rotate(360deg); }
             }
             
-            .category-box:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 0 40px rgba(var(--cat-color), 0.3);
+            .fun-tab:hover .fun-tab-circle::before {
+                opacity: 0.5;
+                animation-play-state: running;
             }
             
-            .project-list {
-                animation: slide-in 0.4s ease-out forwards;
+            .fun-tab.active .fun-tab-circle::before {
+                opacity: 1;
+                animation-play-state: running;
             }
             
-            .category-box.pink { --cat-color: 236, 72, 153; }
-            .category-box.cyan { --cat-color: 6, 182, 212; }
-            .category-box.green { --cat-color: 34, 197, 94; }
-            .category-box.orange { --cat-color: 251, 146, 60; }
+            .fun-tab-circle::after {
+                content: '';
+                position: absolute;
+                inset: 0;
+                border-radius: 50%;
+                background: rgba(17, 24, 39, 0.9);
+                transition: all 0.3s ease;
+            }
+            
+            .fun-tab:hover .fun-tab-circle {
+                transform: translateY(-8px) scale(1.1);
+            }
+            
+            .fun-tab.active .fun-tab-circle {
+                transform: translateY(-8px) scale(1.15);
+            }
+            
+            .fun-tab.active .fun-tab-circle::after {
+                background: rgba(16, 185, 129, 0.1);
+                box-shadow: 0 0 30px currentColor;
+            }
+            
+            .fun-tab-icon {
+                position: relative;
+                z-index: 1;
+                font-size: 1.5rem;
+                transition: all 0.3s ease;
+            }
+            
+            .fun-tab:hover .fun-tab-icon {
+                transform: scale(1.2);
+            }
+            
+            .fun-tab.active .fun-tab-icon {
+                transform: scale(1.2) rotate(360deg);
+                filter: drop-shadow(0 0 10px currentColor);
+            }
+            
+            .fun-tab-label {
+                text-align: center;
+                transition: all 0.3s ease;
+            }
+            
+            .fun-tab-title {
+                font-size: 0.75rem;
+                font-weight: 600;
+                color: #9ca3af;
+                transition: all 0.3s ease;
+                letter-spacing: 0.5px;
+            }
+            
+            .fun-tab:hover .fun-tab-title {
+                color: #fff;
+            }
+            
+            .fun-tab.active .fun-tab-title {
+                color: #10b981;
+                font-weight: 700;
+            }
+            
+            .fun-tab-dot {
+                width: 4px;
+                height: 4px;
+                border-radius: 50%;
+                background: #4b5563;
+                margin: 0 auto;
+                margin-top: 0.25rem;
+                transition: all 0.3s ease;
+            }
+            
+            .fun-tab.active .fun-tab-dot {
+                width: 20px;
+                border-radius: 2px;
+                background: #10b981;
+                box-shadow: 0 0 10px #10b981;
+            }
+            
+            .fun-content {
+                max-height: 0;
+                opacity: 0;
+                overflow: hidden;
+                padding: 0;
+                margin-bottom: 0;
+                border-width: 0;
+                transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+                transform: translateY(-20px);
+            }
+            
+            .fun-content.active {
+                max-height: 600px;
+                opacity: 1;
+                padding: 2rem;
+                margin-bottom: 1rem;
+                border-width: 1px;
+                transform: translateY(0);
+            }
+            
+            /* Gravity tab - fullscreen, no padding/max-height */
+            #gravity-content.active {
+                max-height: none !important;
+                padding: 0 !important;
+                overflow: visible !important;
+                border: none !important;
+                margin: 0 !important;
+                background: transparent !important;
+            }
+            
+            /* Gravity animations */
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
+            
+            @keyframes slideDown {
+                from {
+                    opacity: 0;
+                    transform: translate(-50%, -30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translate(-50%, 0);
+                }
+            }
+            
+            @keyframes slideUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            /* XO Tab hover zoom effect */
+            .xo-tab:hover .xo-tab-img {
+                transform: scale(1.15);
+            }
+            
+            /* Gravity Tab hover zoom effect */
+            .gravity-tab:hover .gravity-tab-img {
+                transform: scale(1.15);
+            }
         </style>
+
+        <!-- Background Effects -->
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-green-500/20 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
+        </div>
         
-        <div class="max-w-7xl mx-auto px-6">
-            <!-- Section Header -->
-            <div class="text-center mb-16">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-4">
-                    <span class="w-2 h-2 rounded-full bg-purple-400 animate-pulse"></span>
-                    <span class="text-xs font-mono text-purple-300 tracking-wider">PROJECT CATEGORIES</span>
+        <!-- Grid Pattern -->
+        <div class="absolute inset-0 opacity-5" style="background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 40px 40px;"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <!-- Section Header with Title Left, Tabs Right -->
+            <div class="flex items-center justify-between mb-6">
+                <!-- Left: Title -->
+                <div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 mb-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
+                        <span class="text-xs font-mono text-green-400 tracking-wider">INTERACTIVE</span>
+                    </div>
+                    <h2 class="text-4xl font-bold text-white">
+                        Fun <span class="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">Zone</span>
+                    </h2>
                 </div>
-                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
-                    Browse by <span class="bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">Category</span>
-                </h2>
-                <p class="text-gray-400 max-w-2xl mx-auto">Explore my work organized by project type</p>
+
+                <!-- Right: Fun Tabs -->
+                <div class="flex items-center gap-4">
+                    <!-- Tab 1: Cosmic Age -->
+                    <div class="fun-tab" onclick="toggleFunTab('games')">
+                        <div class="fun-tab-circle text-green-400" style="width: 65px; height: 65px;">
+                            <img src="https://cdn.pixabay.com/photo/2024/03/17/09/13/ai-generated-8638574_1280.png" alt="Cosmic" class="fun-tab-icon" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                        </div>
+                        <div class="fun-tab-label">
+                            <div class="fun-tab-title" style="font-size: 11px;">Cosmic Age</div>
+                            <div class="fun-tab-dot"></div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 2: XO Game -->
+                    <div class="fun-tab xo-tab" onclick="toggleFunTab('music')">
+                        <div style="width: 65px; height: 65px; transition: transform 0.3s ease;">
+                            <img src="https://videos.openai.com/az/vg-assets/task_01keh6mgjzfn69rv33h20wyjd5%2F1767956491_img_0.webp?se=2026-01-13T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-01-09T02%3A42%3A47Z&ske=2026-01-16T02%3A47%3A47Z&sks=b&skv=2024-08-04&sig=O5g5Ggedy%2BXGUdecevE76/CcFYDyJGJTuGuU6xV0zp4%3D&ac=oaivgprodscus2" alt="XO" class="xo-tab-img" style="width: 100%; height: 100%; object-fit: contain; transition: transform 0.3s ease;">
+                        </div>
+                        <div class="fun-tab-label">
+                            <div class="fun-tab-title" style="font-size: 11px;">Tic Tac Toe</div>
+                            <div class="fun-tab-dot"></div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 3: Gravity (NEW) -->
+                    <div class="fun-tab" onclick="toggleFunTab('gravity')">
+                        <div class="fun-tab-circle text-purple-400" style="width: 65px; height: 65px;">
+                            <i class="fun-tab-icon fas fa-atom"></i>
+                        </div>
+                        <div class="fun-tab-label">
+                            <div class="fun-tab-title" style="font-size: 11px;">Gravity</div>
+                            <div class="fun-tab-dot"></div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 4: Quiz -->
+                    <div class="fun-tab" onclick="toggleFunTab('quiz')">
+                        <div class="fun-tab-circle text-yellow-400" style="width: 65px; height: 65px;">
+                            <i class="fun-tab-icon fas fa-question-circle"></i>
+                        </div>
+                        <div class="fun-tab-label">
+                            <div class="fun-tab-title" style="font-size: 11px;">Quiz</div>
+                            <div class="fun-tab-dot"></div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 5: Photos -->
+                    <div class="fun-tab" onclick="toggleFunTab('photos')">
+                        <div class="fun-tab-circle text-red-400" style="width: 65px; height: 65px;">
+                            <i class="fun-tab-icon fas fa-camera"></i>
+                        </div>
+                        <div class="fun-tab-label">
+                            <div class="fun-tab-title" style="font-size: 11px;">Photos</div>
+                            <div class="fun-tab-dot"></div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 6: Calculator -->
+                    <div class="fun-tab" onclick="toggleFunTab('calculator')">
+                        <div class="fun-tab-circle text-indigo-400" style="width: 65px; height: 65px;">
+                            <i class="fun-tab-icon fas fa-calculator"></i>
+                        </div>
+                        <div class="fun-tab-label">
+                            <div class="fun-tab-title" style="font-size: 11px;">Calc</div>
+                            <div class="fun-tab-dot"></div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 7: Timer -->
+                    <div class="fun-tab" onclick="toggleFunTab('timer')">
+                        <div class="fun-tab-circle text-teal-400" style="width: 65px; height: 65px;">
+                            <i class="fun-tab-icon fas fa-clock"></i>
+                        </div>
+                        <div class="fun-tab-label">
+                            <div class="fun-tab-title" style="font-size: 11px;">Timer</div>
+                            <div class="fun-tab-dot"></div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 8: Notes -->
+                    <div class="fun-tab" onclick="toggleFunTab('notes')">
+                        <div class="fun-tab-circle text-amber-400" style="width: 65px; height: 65px;">
+                            <i class="fun-tab-icon fas fa-sticky-note"></i>
+                        </div>
+                        <div class="fun-tab-label">
+                            <div class="fun-tab-title" style="font-size: 11px;">Notes</div>
+                            <div class="fun-tab-dot"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <!-- Category Counter Cards -->
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-                
-                <!-- Personal Portfolio -->
-                <div class="category-box pink relative group bg-gradient-to-br from-gray-900/80 via-gray-900/60 to-pink-900/20 rounded-2xl p-6 border border-pink-500/20 cursor-pointer backdrop-blur-sm" onclick="showCategoryProjects('personal')">
-                    <!-- Glow Effect -->
-                    <div class="absolute inset-0 bg-gradient-to-r from-pink-500/0 via-pink-500/5 to-pink-500/0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <!-- Expandable Content Areas -->
+            <div class="max-w-7xl mx-auto">
+                <!-- Games Content - COSMIC AGE CALCULATOR -->
+                <div id="games-content" class="fun-content bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 border border-gray-700 rounded-xl p-6">
+                    <!-- Compact Header -->
+                    <div class="mb-5">
+                        <div class="flex items-center gap-2 mb-1">
+                            <div class="w-6 h-6 bg-gradient-to-br from-blue-500 to-purple-600 rounded-md flex items-center justify-center">
+                                <i class="fas fa-rocket text-white text-xs"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white">Cosmic Age Calculator</h3>
+                        </div>
+                        <p class="text-gray-500 text-xs ml-8">Calculate your age across the solar system</p>
+                    </div>
                     
-                    <!-- Count Number -->
-                    <div class="relative z-10 text-center">
-                        <span class="text-6xl font-extralight text-pink-400 block mb-2" style="text-shadow: 0 0 30px rgba(236, 72, 153, 0.5);">01</span>
-                        <div class="w-12 h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent mx-auto mb-4"></div>
-                        
-                        <!-- Icon & Label -->
-                        <div class="flex items-center justify-center gap-2 mb-2">
-                            <div class="w-8 h-8 rounded-full bg-pink-500/20 flex items-center justify-center">
-                                <i class="fas fa-user text-pink-400 text-sm"></i>
+                    <!-- Two Column Layout -->
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+                        <!-- Left: Input Section -->
+                        <div class="lg:col-span-4">
+                            <div class="bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 rounded-lg p-4 shadow-lg">
+                                <label class="block text-xs font-semibold text-gray-400 mb-2 uppercase tracking-wide">Date of Birth</label>
+                                <input 
+                                    type="text" 
+                                    id="cosmic-dob" 
+                                    placeholder="DD/MM/YYYY"
+                                    maxlength="10"
+                                    class="w-full px-3 py-2 bg-gray-900 border border-gray-600 rounded-md text-white text-sm text-center font-mono focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500/50 transition-all"
+                                    onkeyup="formatDateInput(this)"
+                                />
+                                <button 
+                                    onclick="calculateCosmicAge()" 
+                                    class="w-full mt-3 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-xs font-semibold rounded-md hover:from-blue-700 hover:to-purple-700 transition-all shadow-md hover:shadow-blue-500/50"
+                                >
+                                    <i class="fas fa-calculator mr-1.5"></i>CALCULATE
+                                </button>
+                                
+                                <!-- Info Card -->
+                                <div class="mt-4 p-3 bg-blue-500/10 border border-blue-500/20 rounded-md">
+                                    <p class="text-blue-300 text-xs leading-relaxed">
+                                        <i class="fas fa-info-circle mr-1"></i>
+                                        Live counter updates every second
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                        <h3 class="text-white font-semibold text-sm tracking-wide">PERSONAL</h3>
-                        <p class="text-gray-500 text-xs mt-1">Portfolio</p>
-                        
-                        <!-- Hover Hint -->
-                        <div class="mt-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                            <span class="text-pink-400 text-xs"><i class="fas fa-arrow-right mr-1"></i>View</span>
+
+                        <!-- Right: Results Section -->
+                        <div class="lg:col-span-8">
+                            <div id="cosmic-results" class="hidden">
+                                <div class="grid grid-cols-2 md:grid-cols-3 gap-2.5">
+                                    <!-- Mercury -->
+                                    <div class="group relative bg-gradient-to-br from-orange-950/40 to-gray-900 border border-orange-500/20 rounded-lg p-3 hover:border-orange-500/60 hover:shadow-lg hover:shadow-orange-500/20 transition-all">
+                                        <div class="absolute top-0 right-0 w-16 h-16 bg-orange-500/5 rounded-full blur-xl"></div>
+                                        <div class="relative">
+                                            <div class="flex items-center gap-1.5 mb-1.5">
+                                                <img src="https://img.icons8.com/color/48/mercury.png" alt="Mercury" class="w-7 h-7"/>
+                                                <h4 class="text-white text-xs font-semibold">Mercury</h4>
+                                            </div>
+                                            <p class="text-2xl font-bold text-orange-400 leading-none mb-1" id="age-mercury-years">0</p>
+                                            <p class="text-[10px] text-orange-300/60" id="age-mercury-detail">0m 0d 0h 0min 0s</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Venus -->
+                                    <div class="group relative bg-gradient-to-br from-yellow-950/40 to-gray-900 border border-yellow-500/20 rounded-lg p-3 hover:border-yellow-500/60 hover:shadow-lg hover:shadow-yellow-500/20 transition-all">
+                                        <div class="absolute top-0 right-0 w-16 h-16 bg-yellow-500/5 rounded-full blur-xl"></div>
+                                        <div class="relative">
+                                            <div class="flex items-center gap-1.5 mb-1.5">
+                                                <img src="https://img.icons8.com/color/48/venus.png" alt="Venus" class="w-7 h-7"/>
+                                                <h4 class="text-white text-xs font-semibold">Venus</h4>
+                                            </div>
+                                            <p class="text-2xl font-bold text-yellow-400 leading-none mb-1" id="age-venus-years">0</p>
+                                            <p class="text-[10px] text-yellow-300/60" id="age-venus-detail">0m 0d 0h 0min 0s</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Earth -->
+                                    <div class="group relative bg-gradient-to-br from-blue-950/40 to-gray-900 border border-blue-500/20 rounded-lg p-3 hover:border-blue-500/60 hover:shadow-lg hover:shadow-blue-500/20 transition-all">
+                                        <div class="absolute top-0 right-0 w-16 h-16 bg-blue-500/5 rounded-full blur-xl"></div>
+                                        <div class="relative">
+                                            <div class="flex items-center gap-1.5 mb-1.5">
+                                                <img src="https://img.icons8.com/?size=100&id=YWLZE8NPvFMr&format=png&color=000000" alt="Earth" class="w-7 h-7"/>
+                                                <h4 class="text-white text-xs font-semibold">Earth</h4>
+                                            </div>
+                                            <p class="text-2xl font-bold text-blue-400 leading-none mb-1" id="age-earth-years">0</p>
+                                            <p class="text-[10px] text-blue-300/60" id="age-earth-detail">0m 0d 0h 0min 0s</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Mars -->
+                                    <div class="group relative bg-gradient-to-br from-red-950/40 to-gray-900 border border-red-500/20 rounded-lg p-3 hover:border-red-500/60 hover:shadow-lg hover:shadow-red-500/20 transition-all">
+                                        <div class="absolute top-0 right-0 w-16 h-16 bg-red-500/5 rounded-full blur-xl"></div>
+                                        <div class="relative">
+                                            <div class="flex items-center gap-1.5 mb-1.5">
+                                                <img src="https://img.icons8.com/color/48/mars-planet.png" alt="Mars" class="w-7 h-7"/>
+                                                <h4 class="text-white text-xs font-semibold">Mars</h4>
+                                            </div>
+                                            <p class="text-2xl font-bold text-red-400 leading-none mb-1" id="age-mars-years">0</p>
+                                            <p class="text-[10px] text-red-300/60" id="age-mars-detail">0m 0d 0h 0min 0s</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Jupiter -->
+                                    <div class="group relative bg-gradient-to-br from-amber-950/40 to-gray-900 border border-amber-500/20 rounded-lg p-3 hover:border-amber-500/60 hover:shadow-lg hover:shadow-amber-500/20 transition-all">
+                                        <div class="absolute top-0 right-0 w-16 h-16 bg-amber-500/5 rounded-full blur-xl"></div>
+                                        <div class="relative">
+                                            <div class="flex items-center gap-1.5 mb-1.5">
+                                                <img src="https://img.icons8.com/color/48/jupiter-planet.png" alt="Jupiter" class="w-7 h-7"/>
+                                                <h4 class="text-white text-xs font-semibold">Jupiter</h4>
+                                            </div>
+                                            <p class="text-2xl font-bold text-amber-400 leading-none mb-1" id="age-jupiter-years">0</p>
+                                            <p class="text-[10px] text-amber-300/60" id="age-jupiter-detail">0m 0d 0h 0min 0s</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Saturn -->
+                                    <div class="group relative bg-gradient-to-br from-yellow-950/40 to-gray-900 border border-yellow-400/20 rounded-lg p-3 hover:border-yellow-400/60 hover:shadow-lg hover:shadow-yellow-400/20 transition-all">
+                                        <div class="absolute top-0 right-0 w-16 h-16 bg-yellow-400/5 rounded-full blur-xl"></div>
+                                        <div class="relative">
+                                            <div class="flex items-center gap-1.5 mb-1.5">
+                                                <img src="https://img.icons8.com/color/48/saturn-planet.png" alt="Saturn" class="w-7 h-7"/>
+                                                <h4 class="text-white text-xs font-semibold">Saturn</h4>
+                                            </div>
+                                            <p class="text-2xl font-bold text-yellow-300 leading-none mb-1" id="age-saturn-years">0</p>
+                                            <p class="text-[10px] text-yellow-200/60" id="age-saturn-detail">0m 0d 0h 0min 0s</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Uranus -->
+                                    <div class="group relative bg-gradient-to-br from-cyan-950/40 to-gray-900 border border-cyan-500/20 rounded-lg p-3 hover:border-cyan-500/60 hover:shadow-lg hover:shadow-cyan-500/20 transition-all">
+                                        <div class="absolute top-0 right-0 w-16 h-16 bg-cyan-500/5 rounded-full blur-xl"></div>
+                                        <div class="relative">
+                                            <div class="flex items-center gap-1.5 mb-1.5">
+                                                <img src="https://img.icons8.com/color/48/uranus-planet.png" alt="Uranus" class="w-7 h-7"/>
+                                                <h4 class="text-white text-xs font-semibold">Uranus</h4>
+                                            </div>
+                                            <p class="text-2xl font-bold text-cyan-400 leading-none mb-1" id="age-uranus-years">0</p>
+                                            <p class="text-[10px] text-cyan-300/60" id="age-uranus-detail">0m 0d 0h 0min 0s</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Neptune -->
+                                    <div class="group relative bg-gradient-to-br from-blue-950/40 to-gray-900 border border-blue-600/20 rounded-lg p-3 hover:border-blue-600/60 hover:shadow-lg hover:shadow-blue-600/20 transition-all">
+                                        <div class="absolute top-0 right-0 w-16 h-16 bg-blue-600/5 rounded-full blur-xl"></div>
+                                        <div class="relative">
+                                            <div class="flex items-center gap-1.5 mb-1.5">
+                                                <img src="https://img.icons8.com/color/48/neptune-planet.png" alt="Neptune" class="w-7 h-7"/>
+                                                <h4 class="text-white text-xs font-semibold">Neptune</h4>
+                                            </div>
+                                            <p class="text-2xl font-bold text-blue-500 leading-none mb-1" id="age-neptune-years">0</p>
+                                            <p class="text-[10px] text-blue-400/60" id="age-neptune-detail">0m 0d 0h 0min 0s</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Pluto -->
+                                    <div class="group relative bg-gradient-to-br from-gray-800/40 to-gray-900 border border-gray-500/20 rounded-lg p-3 hover:border-gray-500/60 hover:shadow-lg hover:shadow-gray-500/20 transition-all">
+                                        <div class="absolute top-0 right-0 w-16 h-16 bg-gray-500/5 rounded-full blur-xl"></div>
+                                        <div class="relative">
+                                            <div class="flex items-center gap-1.5 mb-1.5">
+                                                <img src="https://img.icons8.com/color/48/pluto-dwarf-planet.png" alt="Pluto" class="w-7 h-7"/>
+                                                <h4 class="text-white text-xs font-semibold">Pluto</h4>
+                                            </div>
+                                            <p class="text-2xl font-bold text-gray-400 leading-none mb-1" id="age-pluto-years">0</p>
+                                            <p class="text-[10px] text-gray-300/60" id="age-pluto-detail">0m 0d 0h 0min 0s</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Empty State -->
+                            <div id="cosmic-empty" class="flex items-center justify-center h-full min-h-[240px]">
+                                <div class="text-center">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-lg flex items-center justify-center mx-auto mb-2">
+                                        <i class="fas fa-globe text-blue-400 text-xl"></i>
+                                    </div>
+                                    <p class="text-gray-500 text-xs">Enter your birth date to calculate</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Business -->
-                <div class="category-box cyan relative group bg-gradient-to-br from-gray-900/80 via-gray-900/60 to-cyan-900/20 rounded-2xl p-6 border border-cyan-500/20 cursor-pointer backdrop-blur-sm" onclick="showCategoryProjects('business')">
-                    <div class="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-500/5 to-cyan-500/0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    
-                    <div class="relative z-10 text-center">
-                        <span class="text-6xl font-extralight text-cyan-400 block mb-2" style="text-shadow: 0 0 30px rgba(6, 182, 212, 0.5);">01</span>
-                        <div class="w-12 h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent mx-auto mb-4"></div>
-                        
-                        <div class="flex items-center justify-center gap-2 mb-2">
-                            <div class="w-8 h-8 rounded-full bg-cyan-500/20 flex items-center justify-center">
-                                <i class="fas fa-building text-cyan-400 text-sm"></i>
+                <!-- Music Content - XO GAME -->
+                <div id="music-content" class="fun-content" style="background: transparent !important; border: none !important; padding: 0 !important; overflow: visible !important;">
+                    <div class="max-w-xs mx-auto" style="position: relative; z-index: 1000;">
+                        <!-- 3D XO Game Card -->
+                        <div class="relative" style="transform: perspective(1500px) rotateY(0deg) rotateX(2deg); transform-style: preserve-3d;">
+                            <!-- Card Shadow -->
+                            <div class="absolute -inset-2 bg-gradient-to-r from-purple-600/20 via-pink-600/20 to-purple-600/20 rounded-2xl blur-xl opacity-75" style="pointer-events: none;"></div>
+                            
+                            <!-- Main Card -->
+                            <div class="relative bg-gradient-to-br from-gray-900 via-gray-800 to-black rounded-xl p-4 border-2 border-gray-700 shadow-2xl" style="position: relative; z-index: 10;">
+                                <!-- Background Pattern -->
+                                <div class="absolute inset-0 opacity-5" style="pointer-events: none; z-index: 1;">
+                                    <svg width="100%" height="100%">
+                                        <pattern id="xo-dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                                            <circle cx="2" cy="2" r="1" fill="white"/>
+                                        </pattern>
+                                        <rect width="100%" height="100%" fill="url(#xo-dots)"/>
+                                    </svg>
+                                </div>
+                                
+                                <!-- Gradient Orb -->
+                                <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-purple-500/30 to-pink-500/30 rounded-full blur-3xl" style="pointer-events: none; z-index: 1;"></div>
+                                
+                                <!-- Background Blend -->
+                                <div class="absolute inset-0 bg-gradient-to-tr from-purple-500/5 via-transparent to-pink-500/5" style="pointer-events: none; z-index: 1;"></div>
+                                
+                                <!-- Content -->
+                                <div style="position: relative; z-index: 20;">
+                                    <!-- Title -->
+                                    <h3 class="text-xl font-black text-white mb-1 bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent">
+                                        Tic-Tac-Toe
+                                    </h3>
+                                    
+                                    <!-- Divider -->
+                                    <div class="h-0.5 w-10 bg-gradient-to-r from-purple-500 via-pink-500 to-transparent rounded-full mb-2"></div>
+                                    
+                                    <!-- Game Status -->
+                                    <div class="mb-3 text-center">
+                                        <p id="xo-status" class="text-xs font-semibold text-purple-400">Your Turn (X)</p>
+                                    </div>
+                                    
+                                    <!-- Game Board and Stats -->
+                                    <div class="flex gap-3 items-start mb-3">
+                                        <!-- XO Game Board -->
+                                        <div style="width: 150px; position: relative; z-index: 30;">
+                                            <div class="grid grid-cols-3 gap-1.5">
+                                                <button onclick="makeMove(0)" class="xo-cell aspect-square bg-gray-800/50 rounded border-2 border-gray-700/50 flex items-center justify-center text-2xl font-bold cursor-pointer hover:bg-gray-700/50 hover:border-purple-500/50 transition-all" style="min-height: 45px;"></button>
+                                                <button onclick="makeMove(1)" class="xo-cell aspect-square bg-gray-800/50 rounded border-2 border-gray-700/50 flex items-center justify-center text-2xl font-bold cursor-pointer hover:bg-gray-700/50 hover:border-purple-500/50 transition-all" style="min-height: 45px;"></button>
+                                                <button onclick="makeMove(2)" class="xo-cell aspect-square bg-gray-800/50 rounded border-2 border-gray-700/50 flex items-center justify-center text-2xl font-bold cursor-pointer hover:bg-gray-700/50 hover:border-purple-500/50 transition-all" style="min-height: 45px;"></button>
+                                                <button onclick="makeMove(3)" class="xo-cell aspect-square bg-gray-800/50 rounded border-2 border-gray-700/50 flex items-center justify-center text-2xl font-bold cursor-pointer hover:bg-gray-700/50 hover:border-purple-500/50 transition-all" style="min-height: 45px;"></button>
+                                                <button onclick="makeMove(4)" class="xo-cell aspect-square bg-gray-800/50 rounded border-2 border-gray-700/50 flex items-center justify-center text-2xl font-bold cursor-pointer hover:bg-gray-700/50 hover:border-purple-500/50 transition-all" style="min-height: 45px;"></button>
+                                                <button onclick="makeMove(5)" class="xo-cell aspect-square bg-gray-800/50 rounded border-2 border-gray-700/50 flex items-center justify-center text-2xl font-bold cursor-pointer hover:bg-gray-700/50 hover:border-purple-500/50 transition-all" style="min-height: 45px;"></button>
+                                                <button onclick="makeMove(6)" class="xo-cell aspect-square bg-gray-800/50 rounded border-2 border-gray-700/50 flex items-center justify-center text-2xl font-bold cursor-pointer hover:bg-gray-700/50 hover:border-purple-500/50 transition-all" style="min-height: 45px;"></button>
+                                                <button onclick="makeMove(7)" class="xo-cell aspect-square bg-gray-800/50 rounded border-2 border-gray-700/50 flex items-center justify-center text-2xl font-bold cursor-pointer hover:bg-gray-700/50 hover:border-purple-500/50 transition-all" style="min-height: 45px;"></button>
+                                                <button onclick="makeMove(8)" class="xo-cell aspect-square bg-gray-800/50 rounded border-2 border-gray-700/50 flex items-center justify-center text-2xl font-bold cursor-pointer hover:bg-gray-700/50 hover:border-purple-500/50 transition-all" style="min-height: 45px;"></button>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Stats on Right -->
+                                        <div class="flex flex-col gap-1.5 flex-1">
+                                            <div class="bg-gray-800/50 rounded p-1.5 border border-gray-700/50 text-center">
+                                                <div class="text-base font-bold text-purple-400" id="x-wins">0</div>
+                                                <div class="text-[8px] text-gray-500 uppercase tracking-wider">You</div>
+                                            </div>
+                                            <div class="bg-gray-800/50 rounded p-1.5 border border-gray-700/50 text-center">
+                                                <div class="text-base font-bold text-gray-400" id="draws">0</div>
+                                                <div class="text-[8px] text-gray-500 uppercase tracking-wider">Draw</div>
+                                            </div>
+                                            <div class="bg-gray-800/50 rounded p-1.5 border border-gray-700/50 text-center">
+                                                <div class="text-base font-bold text-pink-400" id="o-wins">0</div>
+                                                <div class="text-[8px] text-gray-500 uppercase tracking-wider">Bot</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Reset Button -->
+                                    <button onclick="resetXO()" class="w-full px-2.5 py-1.5 bg-gradient-to-r from-purple-600 to-pink-600 text-white text-xs font-semibold rounded hover:from-purple-700 hover:to-pink-700 transition-all shadow-md hover:shadow-purple-500/50">
+                                        <i class="fas fa-redo mr-1"></i>Reset
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                        <h3 class="text-white font-semibold text-sm tracking-wide">BUSINESS</h3>
-                        <p class="text-gray-500 text-xs mt-1">Website</p>
-                        
-                        <div class="mt-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                            <span class="text-cyan-400 text-xs"><i class="fas fa-arrow-right mr-1"></i>View</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- E-Commerce (Coming Soon) -->
-                <div class="category-box green relative group bg-gradient-to-br from-gray-900/80 via-gray-900/60 to-green-900/10 rounded-2xl p-6 border border-gray-800 cursor-not-allowed backdrop-blur-sm opacity-60">
-                    <div class="relative z-10 text-center">
-                        <span class="text-6xl font-extralight text-gray-600 block mb-2">00</span>
-                        <div class="w-12 h-px bg-gray-700 mx-auto mb-4"></div>
-                        
-                        <div class="flex items-center justify-center gap-2 mb-2">
-                            <div class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center">
-                                <i class="fas fa-shopping-cart text-gray-600 text-sm"></i>
-                            </div>
+                <!-- Gravity Content (NEW) - empty wrapper, fullscreen is at body level -->
+                <div id="gravity-content" class="fun-content" style="display: none !important;">
+                </div>
+
+                <!-- Quiz Content -->
+                <div id="quiz-content" class="fun-content bg-gray-800/30 border-gray-700 rounded-2xl backdrop-blur-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-question-circle text-white"></i>
                         </div>
-                        <h3 class="text-gray-500 font-semibold text-sm tracking-wide">E-COMMERCE</h3>
-                        <p class="text-gray-600 text-xs mt-1">Store</p>
-                        
-                        <div class="mt-4">
-                            <span class="text-gray-600 text-xs">Coming Soon</span>
-                        </div>
+                        <h3 class="text-2xl font-bold text-white">Quiz</h3>
+                    </div>
+                    <div class="text-gray-400">
+                        <p>Quiz content will be added here...</p>
                     </div>
                 </div>
 
-                <!-- SaaS (Coming Soon) -->
-                <div class="category-box orange relative group bg-gradient-to-br from-gray-900/80 via-gray-900/60 to-orange-900/10 rounded-2xl p-6 border border-gray-800 cursor-not-allowed backdrop-blur-sm opacity-60">
-                    <div class="relative z-10 text-center">
-                        <span class="text-6xl font-extralight text-gray-600 block mb-2">00</span>
-                        <div class="w-12 h-px bg-gray-700 mx-auto mb-4"></div>
-                        
-                        <div class="flex items-center justify-center gap-2 mb-2">
-                            <div class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center">
-                                <i class="fas fa-cloud text-gray-600 text-sm"></i>
-                            </div>
+                <!-- Photos Content -->
+                <div id="photos-content" class="fun-content bg-gray-800/30 border-gray-700 rounded-2xl backdrop-blur-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-br from-red-500 to-pink-500 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-camera text-white"></i>
                         </div>
-                        <h3 class="text-gray-500 font-semibold text-sm tracking-wide">SAAS</h3>
-                        <p class="text-gray-600 text-xs mt-1">Application</p>
-                        
-                        <div class="mt-4">
-                            <span class="text-gray-600 text-xs">Coming Soon</span>
-                        </div>
+                        <h3 class="text-2xl font-bold text-white">Photo Gallery</h3>
+                    </div>
+                    <div class="text-gray-400">
+                        <p>Photo gallery will be added here...</p>
                     </div>
                 </div>
 
-            </div>
+                <!-- Calculator Content -->
+                <div id="calculator-content" class="fun-content bg-gray-800/30 border-gray-700 rounded-2xl backdrop-blur-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-calculator text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">Calculator</h3>
+                    </div>
+                    <div class="text-gray-400">
+                        <p>Calculator will be added here...</p>
+                    </div>
+                </div>
 
-            <!-- Project List Area (Hidden by default) -->
-            <div id="category-projects" class="hidden">
-                <!-- Projects will be populated here -->
+                <!-- Timer Content -->
+                <div id="timer-content" class="fun-content bg-gray-800/30 border-gray-700 rounded-2xl backdrop-blur-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-clock text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">Timer & Stopwatch</h3>
+                    </div>
+                    <div class="text-gray-400">
+                        <p>Timer functionality will be added here...</p>
+                    </div>
+                </div>
+
+                <!-- Notes Content -->
+                <div id="notes-content" class="fun-content bg-gray-800/30 border-gray-700 rounded-2xl backdrop-blur-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-br from-amber-500 to-yellow-500 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-sticky-note text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">Quick Notes</h3>
+                    </div>
+                    <div class="text-gray-400">
+                        <p>Notes functionality will be added here...</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <!-- ======================= END CATEGORY SHOWCASE ======================= -->
+
+    <!-- Fun Zone JavaScript -->
+    <script>
+        let activeFunTab = null;
+        
+        // Gravity simulator variables - declare at top
+        let gravityEngine, gravityRender, gravityRunner, gravityMouseConstraint;
+        let gravitySkillBodies = [];
+        let gravityInitialized = false;
+
+        function toggleFunTab(tabName) {
+            console.log('toggleFunTab called with:', tabName);
+            const contentId = tabName + '-content';
+            const contentElement = document.getElementById(contentId);
+            const tabElements = document.querySelectorAll('.fun-tab');
+            const contentElements = document.querySelectorAll('.fun-content');
+            
+            console.log('Found elements:', {
+                contentId,
+                hasContentElement: !!contentElement,
+                tabCount: tabElements.length,
+                contentCount: contentElements.length
+            });
+            
+            if (!contentElement) {
+                console.error('Content element not found:', contentId);
+                return;
+            }
+            
+            // If clicking the same tab, close it
+            if (activeFunTab === tabName) {
+                contentElement.classList.remove('active');
+                tabElements.forEach(tab => tab.classList.remove('active'));
+                activeFunTab = null;
+                return;
+            }
+            
+            // Close all content areas
+            contentElements.forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all tabs
+            tabElements.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Open selected content with animation
+            setTimeout(() => {
+                contentElement.classList.add('active');
+                contentElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 100);
+            
+            // Add active class to clicked tab using window.event
+            if (window.event && window.event.currentTarget) {
+                window.event.currentTarget.classList.add('active');
+            }
+            activeFunTab = tabName;
+            
+            // Handle NEW Gravity tab - show/hide fullscreen
+            const gravityFullscreen = document.getElementById('gravity-fullscreen');
+            console.log('Toggle tab:', tabName, '| Gravity fullscreen found:', !!gravityFullscreen);
+            
+            if (gravityFullscreen) {
+                if (tabName === 'gravity') {
+                    console.log('Opening gravity tab!');
+                    gravityFullscreen.style.display = 'block';
+                    console.log('Fullscreen display set to block');
+                    
+                    // Initialize gravity physics if not already done
+                    if (!window.gravityInitialized) {
+                        console.log('Initializing for first time...');
+                        setTimeout(() => initGravityPhysics(), 100);
+                    } else {
+                        console.log('Already initialized, just dropping skills...');
+                        dropSkills();
+                    }
+                } else {
+                    gravityFullscreen.style.display = 'none';
+                }
+            }
+            
+            // Initialize gravity simulator when Gravity tab is opened
+            if (tabName === 'quotes') {
+                console.log('Gravity tab clicked!');
+                if (typeof initGravitySimulator !== 'undefined' && typeof gravityInitialized !== 'undefined' && !gravityInitialized) {
+                    setTimeout(function() {
+                        initGravitySimulator();
+                        setTimeout(showerGravitySkills, 500);
+                    }, 300);
+                } else if (typeof showerGravitySkills !== 'undefined') {
+                    setTimeout(showerGravitySkills, 100);
+                }
+            }
+        }
+
+        // Format date input automatically
+        function formatDateInput(input) {
+            let value = input.value.replace(/\D/g, ''); // Remove non-digits
+            
+            if (value.length >= 2) {
+                value = value.substring(0, 2) + '/' + value.substring(2);
+            }
+            if (value.length >= 5) {
+                value = value.substring(0, 5) + '/' + value.substring(5, 9);
+            }
+            
+            input.value = value;
+        }
+
+        let cosmicIntervalId = null;
+        let userBirthDate = null;
+
+        // Cosmic Age Calculator
+        function calculateCosmicAge() {
+            const dobInput = document.getElementById('cosmic-dob').value;
+            const resultsDiv = document.getElementById('cosmic-results');
+            const emptyDiv = document.getElementById('cosmic-empty');
+            
+            if (!dobInput) {
+                alert('Please enter your date of birth (DD/MM/YYYY)');
+                return;
+            }
+
+            // Parse DD/MM/YYYY format
+            const parts = dobInput.split('/');
+            if (parts.length !== 3) {
+                alert('Please use DD/MM/YYYY format');
+                return;
+            }
+
+            const day = parseInt(parts[0]);
+            const month = parseInt(parts[1]);
+            const year = parseInt(parts[2]);
+
+            // Validate date
+            if (isNaN(day) || isNaN(month) || isNaN(year) || 
+                day < 1 || day > 31 || month < 1 || month > 12 || year < 1900 || year > 2026) {
+                alert('Please enter a valid date');
+                return;
+            }
+
+            // Create date object (month is 0-indexed in JS)
+            const dob = new Date(year, month - 1, day);
+            const today = new Date();
+            
+            // Validate that date is not in future
+            if (dob > today) {
+                alert('Date of birth cannot be in the future!');
+                return;
+            }
+
+            // Store birth date
+            userBirthDate = dob;
+            
+            // Show results and hide empty state
+            emptyDiv.classList.add('hidden');
+            resultsDiv.classList.remove('hidden');
+            
+            // Clear any existing interval
+            if (cosmicIntervalId) {
+                clearInterval(cosmicIntervalId);
+            }
+            
+            // Update immediately
+            updateCosmicAges();
+            
+            // Update every second
+            cosmicIntervalId = setInterval(updateCosmicAges, 1000);
+        }
+
+        function updateCosmicAges() {
+            if (!userBirthDate) return;
+
+            const now = new Date();
+            const ageInMs = now - userBirthDate;
+            const ageInSeconds = Math.floor(ageInMs / 1000);
+            
+            // Orbital periods in Earth days
+            const orbitalPeriods = {
+                mercury: 88,
+                venus: 225,
+                earth: 365.25,
+                mars: 687,
+                jupiter: 4333,
+                saturn: 10759,
+                uranus: 30687,
+                neptune: 60190,
+                pluto: 90560
+            };
+
+            // Update each planet
+            for (let planet in orbitalPeriods) {
+                const planetDayInSeconds = orbitalPeriods[planet] * 24 * 60 * 60;
+                const planetYearInSeconds = planetDayInSeconds;
+                
+                // Calculate total planet years
+                const totalPlanetYears = ageInSeconds / planetYearInSeconds;
+                const years = Math.floor(totalPlanetYears);
+                
+                // Calculate remaining time after years
+                const remainingSeconds = ageInSeconds % planetYearInSeconds;
+                const planetMonthInSeconds = planetYearInSeconds / 12;
+                const months = Math.floor(remainingSeconds / planetMonthInSeconds);
+                
+                const remainingAfterMonths = remainingSeconds % planetMonthInSeconds;
+                const planetDayInSecs = planetDayInSeconds / orbitalPeriods[planet];
+                const days = Math.floor(remainingAfterMonths / (24 * 60 * 60));
+                
+                const remainingAfterDays = remainingAfterMonths % (24 * 60 * 60);
+                const hours = Math.floor(remainingAfterDays / (60 * 60));
+                
+                const remainingAfterHours = remainingAfterDays % (60 * 60);
+                const minutes = Math.floor(remainingAfterHours / 60);
+                
+                const seconds = remainingAfterHours % 60;
+                
+                // Update display
+                document.getElementById(`age-${planet}-years`).textContent = years;
+                document.getElementById(`age-${planet}-detail`).textContent = 
+                    `${months}m ${days}d ${hours}h ${minutes}min ${seconds}s`;
+            }
+        }
+
+        function animateCounter(elementId, targetValue) {
+            const element = document.getElementById(elementId);
+            const duration = 2000; // 2 seconds
+            const steps = 60;
+            const increment = targetValue / steps;
+            let current = 0;
+            let step = 0;
+
+            const timer = setInterval(() => {
+                step++;
+                current += increment;
+                
+                if (step >= steps) {
+                    element.textContent = targetValue.toFixed(2);
+                    clearInterval(timer);
+                } else {
+                    element.textContent = current.toFixed(2);
+                }
+            }, duration / steps);
+        }
+
+        // XO Game Logic with AI Bot
+        let xoBoard = ['', '', '', '', '', '', '', '', ''];
+        let xoCurrentPlayer = 'X';
+        let xoGameActive = true;
+        let xoStats = { xWins: 0, oWins: 0, draws: 0 };
+
+        function makeMove(index) {
+            if (!xoGameActive || xoBoard[index] !== '' || xoCurrentPlayer === 'O') {
+                return;
+            }
+
+            // Player X makes move
+            xoBoard[index] = 'X';
+            const cells = document.querySelectorAll('.xo-cell');
+            if (cells[index]) {
+                cells[index].innerHTML = '<span class="text-purple-400">X</span>';
+                cells[index].disabled = true;
+            }
+
+            // Check for winner or draw
+            if (checkWinner()) {
+                const statusEl = document.getElementById('xo-status');
+                if (statusEl) statusEl.textContent = "You Win! 🎉";
+                xoGameActive = false;
+                xoStats.xWins++;
+                const winsEl = document.getElementById('x-wins');
+                if (winsEl) winsEl.textContent = xoStats.xWins;
+                return;
+            }
+
+            if (!xoBoard.includes('')) {
+                const statusEl = document.getElementById('xo-status');
+                if (statusEl) statusEl.textContent = "It's a Draw! 🤝";
+                xoGameActive = false;
+                xoStats.draws++;
+                const drawsEl = document.getElementById('draws');
+                if (drawsEl) drawsEl.textContent = xoStats.draws;
+                return;
+            }
+
+            // Bot's turn
+            xoCurrentPlayer = 'O';
+            const statusEl = document.getElementById('xo-status');
+            if (statusEl) statusEl.textContent = "Bot is thinking...";
+            
+            // Delay bot move for realism
+            setTimeout(botMove, 500);
+        }
+
+        function botMove() {
+            if (!xoGameActive) return;
+
+            // Simple AI: Try to win, block player, or take random
+            let move = findWinningMove('O') || findWinningMove('X') || getRandomMove();
+            
+            if (move !== null) {
+                xoBoard[move] = 'O';
+                const cells = document.querySelectorAll('.xo-cell');
+                if (cells[move]) {
+                    cells[move].innerHTML = '<span class="text-pink-400">O</span>';
+                    cells[move].disabled = true;
+                }
+
+                // Check for winner or draw
+                if (checkWinner()) {
+                    const statusEl = document.getElementById('xo-status');
+                    if (statusEl) statusEl.textContent = "Bot Wins! 🤖";
+                    xoGameActive = false;
+                    xoStats.oWins++;
+                    const winsEl = document.getElementById('o-wins');
+                    if (winsEl) winsEl.textContent = xoStats.oWins;
+                    return;
+                }
+
+                if (!xoBoard.includes('')) {
+                    const statusEl = document.getElementById('xo-status');
+                    if (statusEl) statusEl.textContent = "It's a Draw! 🤝";
+                    xoGameActive = false;
+                    xoStats.draws++;
+                    const drawsEl = document.getElementById('draws');
+                    if (drawsEl) drawsEl.textContent = xoStats.draws;
+                    return;
+                }
+
+                // Back to player
+                xoCurrentPlayer = 'X';
+                const statusEl = document.getElementById('xo-status');
+                if (statusEl) statusEl.textContent = "Your Turn (X)";
+            }
+        }
+
+        function findWinningMove(player) {
+            const winPatterns = [
+                [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
+                [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columns
+                [0, 4, 8], [2, 4, 6]             // Diagonals
+            ];
+
+            for (let pattern of winPatterns) {
+                const [a, b, c] = pattern;
+                const line = [xoBoard[a], xoBoard[b], xoBoard[c]];
+                
+                // Check if two cells have the player and one is empty
+                if (line.filter(cell => cell === player).length === 2 && line.includes('')) {
+                    if (xoBoard[a] === '') return a;
+                    if (xoBoard[b] === '') return b;
+                    if (xoBoard[c] === '') return c;
+                }
+            }
+            return null;
+        }
+
+        function getRandomMove() {
+            const available = xoBoard.map((cell, index) => cell === '' ? index : null).filter(i => i !== null);
+            return available.length > 0 ? available[Math.floor(Math.random() * available.length)] : null;
+        }
+
+        function checkWinner() {
+            const winPatterns = [
+                [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
+                [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columns
+                [0, 4, 8], [2, 4, 6]             // Diagonals
+            ];
+
+            return winPatterns.some(pattern => {
+                const [a, b, c] = pattern;
+                return xoBoard[a] && xoBoard[a] === xoBoard[b] && xoBoard[a] === xoBoard[c];
+            });
+        }
+
+        function resetXO() {
+            // Reset game state
+            xoBoard = ['', '', '', '', '', '', '', '', ''];
+            xoCurrentPlayer = 'X';
+            xoGameActive = true;
+            
+            // Update status
+            const statusElement = document.getElementById('xo-status');
+            if (statusElement) {
+                statusElement.textContent = "Your Turn (X)";
+            }
+            
+            // Clear all cells
+            const cells = document.querySelectorAll('.xo-cell');
+            cells.forEach(cell => {
+                cell.innerHTML = '';
+                cell.disabled = false;
+            });
+        }
+
+        // ==================== NEW GRAVITY SIMULATOR ====================
+        (function() {
+            const skills = [
+                { name: 'Python', color: '#3776ab' },
+                { name: 'JavaScript', color: '#f7df1e' },
+                { name: 'React', color: '#61dafb' },
+                { name: 'Node.js', color: '#68a063' },
+                { name: 'HTML', color: '#e34c26' },
+                { name: 'CSS', color: '#264de4' },
+                { name: 'Git', color: '#f05032' },
+                { name: 'GitHub', color: '#181717' },
+                { name: 'Docker', color: '#0db7ed' },
+                { name: 'AWS', color: '#ff9900' },
+                { name: 'Linux', color: '#fcc624' },
+                { name: 'Java', color: '#007396' },
+                { name: 'PHP', color: '#777bb4' },
+                { name: 'Angular', color: '#dd0031' },
+                { name: 'Vue', color: '#42b883' }
+            ];
+
+            let engine, render, runner, bodies = [];
+
+            window.initGravityPhysics = function() {
+                console.log('=== INIT GRAVITY PHYSICS CALLED ===');
+                
+                const canvas = document.getElementById('gravity-canvas');
+                if (!canvas) {
+                    console.error('Canvas not found!');
+                    return;
+                }
+
+                const fullscreen = document.getElementById('gravity-fullscreen');
+                console.log('Fullscreen display:', fullscreen ? fullscreen.style.display : 'not found');
+                console.log('Canvas:', canvas);
+
+                const width = window.innerWidth;
+                const height = window.innerHeight;
+
+                console.log('Window size:', width, 'x', height);
+
+                // Set canvas dimensions explicitly
+                canvas.width = width;
+                canvas.height = height;
+                
+                console.log('Canvas dimensions set to:', canvas.width, 'x', canvas.height);
+
+                // Create engine
+                engine = Matter.Engine.create();
+                engine.world.gravity.y = 1;
+
+                // Create renderer
+                render = Matter.Render.create({
+                    canvas: canvas,
+                    engine: engine,
+                    options: {
+                        width: width,
+                        height: height,
+                        wireframes: false,
+                        background: 'transparent'
+                    }
+                });
+
+                console.log('Render created, canvas in render:', render.canvas.width, 'x', render.canvas.height);
+
+                // Walls
+                const walls = [
+                    Matter.Bodies.rectangle(width/2, height + 25, width, 50, { isStatic: true, render: { fillStyle: 'transparent' } }),
+                    Matter.Bodies.rectangle(-25, height/2, 50, height, { isStatic: true, render: { fillStyle: 'transparent' } }),
+                    Matter.Bodies.rectangle(width + 25, height/2, 50, height, { isStatic: true, render: { fillStyle: 'transparent' } })
+                ];
+                Matter.World.add(engine.world, walls);
+
+                // Mouse control
+                const mouse = Matter.Mouse.create(canvas);
+                const mouseConstraint = Matter.MouseConstraint.create(engine, {
+                    mouse: mouse,
+                    constraint: {
+                        stiffness: 0.2,
+                        render: { visible: false }
+                    }
+                });
+                Matter.World.add(engine.world, mouseConstraint);
+
+                // Custom rendering for text
+                Matter.Events.on(render, 'afterRender', function() {
+                    const context = render.context;
+                    bodies.forEach(body => {
+                        if (!body.skillData) return;
+                        
+                        const pos = body.position;
+                        const angle = body.angle;
+                        
+                        context.save();
+                        context.translate(pos.x, pos.y);
+                        context.rotate(angle);
+                        
+                        // Draw text
+                        context.font = 'bold 14px monospace';
+                        context.fillStyle = '#fff';
+                        context.textAlign = 'center';
+                        context.textBaseline = 'middle';
+                        context.fillText(body.skillData.name, 0, 0);
+                        
+                        context.restore();
+                    });
+                });
+
+                // Run
+                runner = Matter.Runner.create();
+                Matter.Runner.run(runner, engine);
+                Matter.Render.run(render);
+
+                window.gravityInitialized = true;
+                console.log('Gravity initialized successfully!');
+
+                // Auto-drop skills
+                setTimeout(dropSkills, 300);
+            };
+
+            window.dropSkills = function() {
+                console.log('Dropping skills...');
+                
+                // Clear existing
+                bodies.forEach(b => Matter.World.remove(engine.world, b));
+                bodies = [];
+
+                const width = window.innerWidth;
+
+                skills.forEach((skill, i) => {
+                    const x = 100 + (i * (width - 200) / skills.length);
+                    const y = -100 - (i * 40);
+                    
+                    const body = Matter.Bodies.rectangle(x, y, 120, 45, {
+                        chamfer: { radius: 22 },
+                        render: { fillStyle: skill.color },
+                        restitution: 0.7,
+                        friction: 0.05
+                    });
+                    
+                    body.skillData = skill;
+                    bodies.push(body);
+                    Matter.World.add(engine.world, body);
+                });
+                
+                console.log('Dropped', bodies.length, 'skills');
+            };
+
+            window.shakeGravity = function() {
+                console.log('Shaking!');
+                bodies.forEach(body => {
+                    Matter.Body.applyForce(body, body.position, {
+                        x: (Math.random() - 0.5) * 0.08,
+                        y: (Math.random() - 0.5) * 0.08
+                    });
+                });
+            };
+
+            window.resetGravity = function() {
+                console.log('Resetting!');
+                const width = window.innerWidth;
+                const height = window.innerHeight;
+                const cols = 5;
+                
+                bodies.forEach((body, i) => {
+                    const col = i % cols;
+                    const row = Math.floor(i / cols);
+                    const x = (width / (cols + 1)) * (col + 1);
+                    const y = 200 + row * 100;
+                    
+                    Matter.Body.setPosition(body, { x, y });
+                    Matter.Body.setVelocity(body, { x: 0, y: 0 });
+                    Matter.Body.setAngularVelocity(body, 0);
+                    Matter.Body.setAngle(body, 0);
+                });
+            };
+        })();
+        // ==================== END NEW GRAVITY SIMULATOR ====================
+    </script>
+    <!-- ==================== END FUN ZONE SECTION ==================== -->
 
     <!-- ======================= CONNECT SECTION ======================= -->
     <section id="connect" class="relative py-16 bg-gradient-to-b from-black via-gray-950 to-gray-900 overflow-hidden">
@@ -3018,6 +3835,34 @@ aws s3 sync ./dist</pre>
             updateClock();
             setInterval(updateClock, 1000);
             
+            // Dynamic Age Calculation based on DOB: 13-Oct-1997
+            function calculateAges() {
+                const dob = new Date(1997, 9, 13); // Month is 0-indexed (9 = October)
+                const now = new Date();
+                
+                // Calculate Earth age in years with decimals
+                const ageInMilliseconds = now - dob;
+                const earthAge = ageInMilliseconds / (1000 * 60 * 60 * 24 * 365.25);
+                
+                // Calculate Mars age (1 Mars year = 1.88 Earth years)
+                const marsAge = earthAge / 1.88;
+                
+                // Update navigation display
+                const earthAgeNav = document.querySelector('.earth-age-nav');
+                const marsAgeNav = document.querySelector('.mars-age-nav');
+                
+                if (earthAgeNav) {
+                    earthAgeNav.textContent = Math.floor(earthAge);
+                }
+                if (marsAgeNav) {
+                    marsAgeNav.textContent = marsAge.toFixed(1);
+                }
+            }
+            
+            // Calculate ages immediately and update every hour
+            calculateAges();
+            setInterval(calculateAges, 3600000); // Update every hour
+            
             // Add click animation to gallery items
             const galleryItems = document.querySelectorAll('.gallery-item');
             galleryItems.forEach(item => {
@@ -3311,178 +4156,23 @@ aws s3 sync ./dist</pre>
             calculateHubCosmicAge();
         };
         
-        // Store DOB for live counter
-        let cosmicDob = null;
-        let cosmicIntervalId = null;
-        
-        // Orbital periods in Earth days
-        const orbitalPeriods = {
-            'mercury': 87.969,
-            'venus': 224.701,
-            'earth': 365.2425,
-            'mars': 686.980,
-            'jupiter': 4332.59,
-            'saturn': 10759.22,
-            'uranus': 30688.5,
-            'neptune': 60182.0,
-            'pluto': 90560.0
-        };
-        
-        // Calculate detailed age for a planet
-        function calculatePlanetAge(dob, orbitalDays) {
-            const now = new Date();
-            const diffMs = now - dob;
-            const diffDays = diffMs / (1000 * 60 * 60 * 24);
-            
-            // Total planetary years
-            const totalPlanetYears = diffDays / orbitalDays;
-            const years = Math.floor(totalPlanetYears);
-            
-            // Remaining after full years (in planetary days)
-            const remainingDays = diffDays - (years * orbitalDays);
-            
-            // Convert remaining days to months (30 Earth days = 1 month)
-            const planetaryDayInMs = orbitalDays * 24 * 60 * 60 * 1000 / 365.2425;
-            const earthMonthInDays = 30.4375;
-            const months = Math.floor(remainingDays / earthMonthInDays);
-            const days = Math.floor(remainingDays - (months * earthMonthInDays));
-            
-            // Calculate hours, minutes, seconds from the fractional day
-            const fractionalDay = remainingDays - Math.floor(remainingDays);
-            const totalSecondsInDay = fractionalDay * 24 * 60 * 60;
-            const hours = Math.floor(totalSecondsInDay / 3600);
-            const minutes = Math.floor((totalSecondsInDay % 3600) / 60);
-            const seconds = Math.floor(totalSecondsInDay % 60);
-            
-            return { years, months, days, hours, minutes, seconds };
-        }
-        
-        // Update all planet displays
-        function updateAllPlanets() {
-            if (!cosmicDob) return;
-            
-            const now = new Date();
-            const diffMs = now - cosmicDob;
-            const diffDays = diffMs / (1000 * 60 * 60 * 24);
-            const earthYears = diffDays / 365.2425;
-            
-            // Update Earth age display
-            const earthDisplay = document.getElementById('hubEarthAge');
-            if (earthDisplay) {
-                earthDisplay.textContent = earthYears.toFixed(6);
-            }
-            
-            // Update days and hours alive
-            const daysAlive = Math.floor(diffDays);
-            const hoursAlive = Math.floor(diffMs / (1000 * 60 * 60));
-            
-            const daysDisplay = document.getElementById('hubDaysAlive');
-            if (daysDisplay) daysDisplay.textContent = daysAlive.toLocaleString();
-            
-            const hoursDisplay = document.getElementById('hubHoursAlive');
-            if (hoursDisplay) hoursDisplay.textContent = hoursAlive.toLocaleString();
-            
-            // Update each planet
-            Object.keys(orbitalPeriods).forEach(planet => {
-                const age = calculatePlanetAge(cosmicDob, orbitalPeriods[planet]);
-                
-                const yearsEl = document.querySelector(`.hub-planet-years[data-planet="${planet}"]`);
-                const detailEl = document.querySelector(`.hub-planet-detail[data-planet="${planet}"]`);
-                
-                if (yearsEl) {
-                    yearsEl.textContent = age.years;
-                }
-                
-                if (detailEl) {
-                    const h = String(age.hours).padStart(2, '0');
-                    const m = String(age.minutes).padStart(2, '0');
-                    const s = String(age.seconds).padStart(2, '0');
-                    detailEl.textContent = `${age.months}m ${age.days}d ${h}:${m}:${s}`;
-                }
-            });
-        }
-        
-        // Dimension Hub Cosmic Age Calculator
-        window.calculateHubCosmicAge = function() {
-            const day = document.getElementById('hubDobDay')?.value;
-            const month = document.getElementById('hubDobMonth')?.value;
-            const year = document.getElementById('hubDobYear')?.value;
-            
-            // Validate input
-            if (!day || !month || !year || year.length < 4) return;
-            
-            const dayNum = parseInt(day, 10);
-            const monthNum = parseInt(month, 10);
-            const yearNum = parseInt(year, 10);
-            
-            // Basic validation
-            if (dayNum < 1 || dayNum > 31 || monthNum < 1 || monthNum > 12 || yearNum < 1900 || yearNum > 2026) return;
-            
-            // Create date (month is 0-indexed in JS)
-            const dob = new Date(yearNum, monthNum - 1, dayNum);
-            const now = new Date();
-            
-            if (dob > now || isNaN(dob.getTime())) return;
-            
-            // Store DOB and start live counter
-            cosmicDob = dob;
-            
-            // Clear existing interval
-            if (cosmicIntervalId) {
-                clearInterval(cosmicIntervalId);
-            }
-            
-            // Initial update with animation
-            document.querySelectorAll('.hub-planet-years').forEach((el, index) => {
-                const planet = el.getAttribute('data-planet');
-                if (orbitalPeriods[planet]) {
-                    setTimeout(() => {
-                        el.parentElement.parentElement.style.transform = 'scale(1.02)';
-                        el.parentElement.parentElement.style.borderColor = 'rgba(34, 197, 94, 0.5)';
-                        setTimeout(() => {
-                            el.parentElement.parentElement.style.transform = 'scale(1)';
-                        }, 200);
-                    }, index * 50);
-                }
-            });
-            
-            // Update immediately
-            updateAllPlanets();
-            
-            // Start live counter (update every 100ms for smooth seconds)
-            cosmicIntervalId = setInterval(updateAllPlanets, 100);
-        };
-        
-        // Smooth number animation (kept for compatibility)
-        function animateValue(element, start, end, duration) {
-            const startTime = performance.now();
-            
-            function update(currentTime) {
-                const elapsed = currentTime - startTime;
-                const progress = Math.min(elapsed / duration, 1);
-                
-                // Easing function
-                const easeProgress = 1 - Math.pow(1 - progress, 3);
-                const currentValue = start + (easeProgress * (end - start));
-                
-                element.textContent = currentValue.toFixed(2);
-                
-                if (progress < 1) {
-                    requestAnimationFrame(update);
-                }
-            }
-            
-            requestAnimationFrame(update);
-        }
-        
         // Project Showcase Scroll Animations
         const projectObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const target = entry.target;
                     
-                    // Animate category card from left
-                    if (target.classList.contains('project-category-card')) {
+                    // Animate first row card (Personal Portfolio) from left
+                    if (target.classList.contains('project-category-card') && target.classList.contains('animate-from-left')) {
+                        setTimeout(() => {
+                            target.style.transition = 'all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)';
+                            target.style.transform = 'translateX(0)';
+                            target.style.opacity = '1';
+                        }, 100);
+                    }
+                    
+                    // Animate second row card (Business Website) from right
+                    if (target.classList.contains('project-category-card') && target.classList.contains('animate-from-right')) {
                         setTimeout(() => {
                             target.style.transition = 'all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)';
                             target.style.transform = 'translateX(0)';
@@ -3508,11 +4198,11 @@ aws s3 sync ./dist</pre>
             rootMargin: '0px 0px -50px 0px'
         });
         
-        // Observe category card
-        const categoryCard = document.querySelector('.project-category-card');
-        if (categoryCard) {
-            projectObserver.observe(categoryCard);
-        }
+        // Observe all category cards
+        const categoryCards = document.querySelectorAll('.project-category-card');
+        categoryCards.forEach(card => {
+            projectObserver.observe(card);
+        });
         
         // Observe all project cards
         const projectCards = document.querySelectorAll('.project-card-item');
@@ -3520,5 +4210,42 @@ aws s3 sync ./dist</pre>
             projectObserver.observe(card);
         });
     </script>
+
+    <!-- GRAVITY FULLSCREEN OVERLAY - Outside all containers -->
+    <div id="gravity-fullscreen" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); z-index: 99999; display: none;">
+        <canvas id="gravity-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: block;"></canvas>
+        
+        <!-- Close Button -->
+        <button onclick="closeGravity()" style="position: absolute; top: 20px; right: 20px; width: 50px; height: 50px; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.3); border-radius: 50%; color: white; font-size: 24px; cursor: pointer; z-index: 10;">
+            <i class="fas fa-times"></i>
+        </button>
+        
+        <!-- Title -->
+        <div style="position: absolute; top: 40px; left: 50%; transform: translateX(-50%); text-align: center; pointer-events: none; z-index: 10;">
+            <h2 style="font-size: 3rem; font-weight: bold; background: linear-gradient(to right, #a855f7, #ec4899, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 10px;">
+                Tech Stack Gravity
+            </h2>
+            <p style="color: #94a3b8; font-size: 1rem;">
+                <i class="fas fa-hand-pointer" style="color: #06b6d4;"></i> Drag • Drop • Watch Physics!
+            </p>
+        </div>
+        
+        <!-- Controls -->
+        <div style="position: absolute; bottom: 30px; right: 30px; display: flex; gap: 15px; z-index: 10;">
+            <button onclick="shakeGravity()" style="padding: 12px 24px; background: rgba(168, 85, 247, 0.2); color: #a855f7; border: 2px solid #a855f7; border-radius: 12px; font-weight: 600; cursor: pointer;">
+                <i class="fas fa-random"></i> Shake
+            </button>
+            <button onclick="resetGravity()" style="padding: 12px 24px; background: rgba(6, 182, 212, 0.2); color: #06b6d4; border: 2px solid #06b6d4; border-radius: 12px; font-weight: 600; cursor: pointer;">
+                <i class="fas fa-redo"></i> Reset
+            </button>
+        </div>
+    </div>
+    
+    <script>
+        function closeGravity() {
+            document.getElementById('gravity-fullscreen').style.display = 'none';
+        }
+    </script>
+
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'960c22c6d4a63a81',t:'MTc1Mjc4MDQzOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
