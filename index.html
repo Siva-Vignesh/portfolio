@@ -1925,6 +1925,201 @@ Python | Java | Selenium | Jenkins | Docker`
                     linear-gradient(90deg, rgba(139, 92, 246, 0.03) 1px, transparent 1px);
                 background-size: 60px 60px;
             }
+            
+            /* Category Card Hover Effect */
+            .project-category-card .group {
+                transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+            }
+            
+            .project-category-card:hover .group {
+                transform: perspective(1500px) rotateY(0deg) rotateX(0deg) scale(0.90) translateY(-15px) !important;
+                box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.5);
+            }
+            
+            .project-category-card .group > div:first-child {
+                transition: opacity 0.3s ease, transform 0.3s ease;
+            }
+            
+            .project-category-card:hover .group > div:first-child {
+                opacity: 1 !important;
+                transform: scale(1.1);
+            }
+            
+            /* Portfolio Stack Floating & Hover Effects */
+            @keyframes portfolio-stack-float {
+                0%, 100% { transform: translateY(0px); }
+                50% { transform: translateY(-12px); }
+            }
+            
+            @keyframes front-card-glow {
+                0%, 100% { box-shadow: 0 0 30px rgba(236, 72, 153, 0.3), 0 0 60px rgba(168, 85, 247, 0.2); }
+                50% { box-shadow: 0 0 50px rgba(236, 72, 153, 0.5), 0 0 80px rgba(168, 85, 247, 0.3); }
+            }
+            
+            .portfolio-stack-container {
+                animation: portfolio-stack-float 4s ease-in-out infinite;
+            }
+            
+            .portfolio-front-card {
+                border: 2px solid rgba(236, 72, 153, 0.5) !important;
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+                transition: all 0.6s ease-in-out;
+                z-index: 30;
+                transform-origin: center center;
+            }
+            
+            .portfolio-front-card.active {
+                animation: front-card-glow 3s ease-in-out infinite;
+            }
+            
+            .portfolio-back-card {
+                transition: all 0.6s ease-in-out;
+                z-index: 10;
+                transform-origin: center center;
+            }
+            
+            .portfolio-back-card.active {
+                transform: rotateX(10deg) rotateY(-15deg) translateZ(5px) translateX(0px) translateY(0px) scale(1) !important;
+                border-color: rgba(168, 85, 247, 0.8) !important;
+                background: linear-gradient(135deg, rgba(168, 85, 247, 0.5) 0%, rgba(236, 72, 153, 0.5) 100%) !important;
+                box-shadow: 0 30px 60px -10px rgba(168, 85, 247, 0.5);
+                z-index: 50 !important;
+            }
+            
+            .portfolio-middle-card {
+                transition: all 0.6s ease-in-out;
+                z-index: 20;
+                transform-origin: center center;
+            }
+            
+            .portfolio-middle-card.active {
+                transform: rotateX(10deg) rotateY(-15deg) translateZ(5px) translateX(0px) translateY(0px) scale(1) !important;
+                border-color: rgba(236, 72, 153, 0.8) !important;
+                background: linear-gradient(135deg, rgba(236, 72, 153, 0.5) 0%, rgba(168, 85, 247, 0.5) 100%) !important;
+                box-shadow: 0 30px 60px -10px rgba(236, 72, 153, 0.5);
+                z-index: 50 !important;
+            }
+            
+            .portfolio-fourth-card {
+                transition: all 0.6s ease-in-out;
+                z-index: 8;
+                transform-origin: center center;
+            }
+            
+            .portfolio-fourth-card.active {
+                transform: rotateX(10deg) rotateY(-15deg) translateZ(5px) translateX(0px) translateY(0px) scale(1) !important;
+                border-color: rgba(59, 130, 246, 0.8) !important;
+                background: linear-gradient(135deg, rgba(59, 130, 246, 0.5) 0%, rgba(6, 182, 212, 0.5) 100%) !important;
+                box-shadow: 0 30px 60px -10px rgba(59, 130, 246, 0.5);
+                z-index: 50 !important;
+            }
+            
+            .portfolio-fifth-card {
+                transition: all 0.6s ease-in-out;
+                z-index: 5;
+                transform-origin: center center;
+            }
+            
+            .portfolio-fifth-card.active {
+                transform: rotateX(10deg) rotateY(-15deg) translateZ(5px) translateX(0px) translateY(0px) scale(1) !important;
+                border-color: rgba(99, 102, 241, 0.8) !important;
+                background: linear-gradient(135deg, rgba(99, 102, 241, 0.5) 0%, rgba(139, 92, 246, 0.5) 100%) !important;
+                box-shadow: 0 30px 60px -10px rgba(99, 102, 241, 0.5);
+                z-index: 50 !important;
+            }
+            
+            /* Default stack position */
+            .portfolio-front-card:not(.shuffling) {
+                transform: rotateX(10deg) rotateY(-15deg) translateZ(0px);
+            }
+            
+            /* FAN OUT EFFECT - When back card (3rd) is active */
+            .portfolio-stack-container:has(.portfolio-back-card.active) .portfolio-middle-card:not(.active) {
+                transform: rotateX(10deg) rotateY(-15deg) translateZ(-30px) translateX(80px) translateY(0px) scale(0.92) !important;
+                opacity: 0.7;
+            }
+            
+            .portfolio-stack-container:has(.portfolio-back-card.active) .portfolio-front-card {
+                transform: rotateX(10deg) rotateY(-15deg) translateZ(-60px) translateX(160px) translateY(0px) scale(0.85) !important;
+                opacity: 0.5;
+                animation: none;
+            }
+            
+            .portfolio-stack-container:has(.portfolio-back-card.active) .portfolio-fourth-card:not(.active) {
+                transform: rotateX(10deg) rotateY(-15deg) translateZ(-90px) translateX(-80px) translateY(0px) scale(0.78) !important;
+                opacity: 0.4;
+            }
+            
+            .portfolio-stack-container:has(.portfolio-back-card.active) .portfolio-fifth-card:not(.active) {
+                transform: rotateX(10deg) rotateY(-15deg) translateZ(-120px) translateX(-160px) translateY(0px) scale(0.72) !important;
+                opacity: 0.3;
+            }
+            
+            /* FAN OUT EFFECT - When middle card (2nd) is active */
+            .portfolio-stack-container:has(.portfolio-middle-card.active) .portfolio-front-card {
+                transform: rotateX(10deg) rotateY(-15deg) translateZ(-30px) translateX(80px) translateY(0px) scale(0.92) !important;
+                opacity: 0.6;
+                animation: none;
+            }
+            
+            .portfolio-stack-container:has(.portfolio-middle-card.active) .portfolio-back-card:not(.active) {
+                transform: rotateX(10deg) rotateY(-15deg) translateZ(-60px) translateX(-80px) translateY(0px) scale(0.85) !important;
+                opacity: 0.5;
+            }
+            
+            .portfolio-stack-container:has(.portfolio-middle-card.active) .portfolio-fourth-card:not(.active) {
+                transform: rotateX(10deg) rotateY(-15deg) translateZ(-90px) translateX(-160px) translateY(0px) scale(0.78) !important;
+                opacity: 0.4;
+            }
+            
+            .portfolio-stack-container:has(.portfolio-middle-card.active) .portfolio-fifth-card:not(.active) {
+                transform: rotateX(10deg) rotateY(-15deg) translateZ(-120px) translateX(-240px) translateY(0px) scale(0.72) !important;
+                opacity: 0.3;
+            }
+            
+            /* FAN OUT EFFECT - When fourth card is active */
+            .portfolio-stack-container:has(.portfolio-fourth-card.active) .portfolio-front-card {
+                transform: rotateX(10deg) rotateY(-15deg) translateZ(-30px) translateX(160px) translateY(0px) scale(0.85) !important;
+                opacity: 0.5;
+                animation: none;
+            }
+            
+            .portfolio-stack-container:has(.portfolio-fourth-card.active) .portfolio-middle-card:not(.active) {
+                transform: rotateX(10deg) rotateY(-15deg) translateZ(-60px) translateX(80px) translateY(0px) scale(0.85) !important;
+                opacity: 0.5;
+            }
+            
+            .portfolio-stack-container:has(.portfolio-fourth-card.active) .portfolio-back-card:not(.active) {
+                transform: rotateX(10deg) rotateY(-15deg) translateZ(-90px) translateX(-80px) translateY(0px) scale(0.78) !important;
+                opacity: 0.4;
+            }
+            
+            .portfolio-stack-container:has(.portfolio-fourth-card.active) .portfolio-fifth-card:not(.active) {
+                transform: rotateX(10deg) rotateY(-15deg) translateZ(-120px) translateX(-160px) translateY(0px) scale(0.72) !important;
+                opacity: 0.3;
+            }
+            
+            /* FAN OUT EFFECT - When fifth card is active */
+            .portfolio-stack-container:has(.portfolio-fifth-card.active) .portfolio-front-card {
+                transform: rotateX(10deg) rotateY(-15deg) translateZ(-30px) translateX(240px) translateY(0px) scale(0.78) !important;
+                opacity: 0.4;
+                animation: none;
+            }
+            
+            .portfolio-stack-container:has(.portfolio-fifth-card.active) .portfolio-middle-card:not(.active) {
+                transform: rotateX(10deg) rotateY(-15deg) translateZ(-60px) translateX(160px) translateY(0px) scale(0.78) !important;
+                opacity: 0.4;
+            }
+            
+            .portfolio-stack-container:has(.portfolio-fifth-card.active) .portfolio-back-card:not(.active) {
+                transform: rotateX(10deg) rotateY(-15deg) translateZ(-90px) translateX(80px) translateY(0px) scale(0.78) !important;
+                opacity: 0.4;
+            }
+            
+            .portfolio-stack-container:has(.portfolio-fifth-card.active) .portfolio-fourth-card:not(.active) {
+                transform: rotateX(10deg) rotateY(-15deg) translateZ(-120px) translateX(-80px) translateY(0px) scale(0.72) !important;
+                opacity: 0.3;
+            }
         </style>
 
         <!-- Background Grid -->
@@ -1998,12 +2193,12 @@ aws s3 sync ./dist</pre>
                     <div class="lg:col-span-4 relative z-20 project-category-card animate-from-left opacity-0 lg:-ml-16" style="transform: translateX(-100px);">
                         <div class="sticky top-24">
                             <!-- 3D Category Card with Tilt Effect -->
-                            <div class="relative group" style="transform: perspective(1500px) rotateY(15deg) rotateX(3deg) scale(0.95); transform-style: preserve-3d;">
+                            <div class="relative group" style="transform: perspective(1500px) rotateY(15deg) rotateX(3deg) scale(0.80); transform-style: preserve-3d;">
                                 <!-- Card Shadow -->
                                 <div class="absolute -inset-2 bg-gradient-to-r from-pink-600/20 via-purple-600/20 to-pink-600/20 rounded-2xl blur-xl opacity-75 group-hover:opacity-100 transition-opacity"></div>
                                 
                                 <!-- Main Card -->
-                                <div class="relative bg-gradient-to-br from-gray-900 via-gray-800 to-black rounded-2xl p-8 border-2 border-gray-700 shadow-2xl overflow-hidden">
+                                <div class="relative bg-gradient-to-br from-gray-900 via-gray-800 to-black rounded-2xl p-5 border-2 border-gray-700 shadow-2xl overflow-hidden">
                                     <!-- Background Pattern -->
                                     <div class="absolute inset-0 opacity-5">
                                         <svg width="100%" height="100%">
@@ -2115,13 +2310,304 @@ aws s3 sync ./dist</pre>
                         </div>
                     </div>
                     
-                    <!-- Right: Project Showcase Text -->
+                    <!-- Right: Portfolio Project Showcase - REDESIGNED -->
                     <div class="lg:col-span-8 relative z-10">
                         <div class="relative">
                             
-                            <!-- Project Description Content -->
-                            <div id="projectShowcaseText" class="relative z-10">
-                                <p class="text-gray-400">Project showcase content here.</p>
+                            <!-- Isometric Card Stack -->
+                            <div class="relative h-[400px] flex items-center justify-center">
+                                
+                                <!-- Floating Particles -->
+                                <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                                    <div class="absolute top-10 left-10 w-2 h-2 bg-pink-500 rounded-full animate-ping" style="animation-duration: 3s;"></div>
+                                    <div class="absolute top-20 right-20 w-3 h-3 bg-purple-500 rounded-full animate-ping" style="animation-duration: 4s;"></div>
+                                    <div class="absolute bottom-20 left-20 w-2 h-2 bg-cyan-500 rounded-full animate-ping" style="animation-duration: 2.5s;"></div>
+                                </div>
+                                
+                                <!-- Stacked Cards with 3D Effect -->
+                                <div class="relative portfolio-stack-container" style="transform-style: preserve-3d; perspective: 1000px;">
+                                    
+                                    <!-- Back Card (5th) - Writer & Content Portfolio -->
+                                    <a href="#" class="portfolio-fifth-card absolute w-72 h-44 bg-gradient-to-br from-indigo-600/20 to-violet-600/20 rounded-2xl border border-indigo-500/20 backdrop-blur-sm overflow-hidden cursor-pointer block" 
+                                         style="transform: rotateX(10deg) rotateY(-15deg) translateZ(-120px) translateX(80px) translateY(-40px);"
+                                         onclick="event.preventDefault();">
+                                        <!-- Card Content -->
+                                        <div class="h-full w-full p-4 flex flex-col justify-between">
+                                            <!-- Header -->
+                                            <div class="flex items-center justify-between">
+                                                <div class="flex items-center gap-2">
+                                                    <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center">
+                                                        <i class="fas fa-feather-alt text-white text-xs"></i>
+                                                    </div>
+                                                    <div>
+                                                        <h4 class="text-white text-sm font-bold">Writer & Content</h4>
+                                                        <p class="text-indigo-300 text-[10px]">Stories & Articles</p>
+                                                    </div>
+                                                </div>
+                                                <div class="flex items-center gap-1 px-2 py-0.5 bg-indigo-500/20 rounded-full">
+                                                    <i class="fas fa-pen-nib text-indigo-400 text-[8px]"></i>
+                                                    <span class="text-indigo-300 text-[10px]">Write</span>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Middle Content -->
+                                            <div class="flex-1 flex items-center justify-center">
+                                                <div class="flex gap-3">
+                                                    <div class="w-10 h-10 rounded-lg bg-indigo-500/20 flex items-center justify-center">
+                                                        <i class="fas fa-blog text-indigo-400"></i>
+                                                    </div>
+                                                    <div class="w-10 h-10 rounded-lg bg-violet-500/20 flex items-center justify-center">
+                                                        <i class="fas fa-newspaper text-violet-400"></i>
+                                                    </div>
+                                                    <div class="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center">
+                                                        <i class="fas fa-book text-purple-400"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Footer -->
+                                            <div class="flex items-center justify-between">
+                                                <div class="flex gap-1">
+                                                    <span class="px-1.5 py-0.5 bg-indigo-500/20 text-indigo-300 text-[8px] rounded">Blogs</span>
+                                                    <span class="px-1.5 py-0.5 bg-violet-500/20 text-violet-300 text-[8px] rounded">Articles</span>
+                                                    <span class="px-1.5 py-0.5 bg-purple-500/20 text-purple-300 text-[8px] rounded">Copy</span>
+                                                </div>
+                                                <div class="flex items-center gap-1 text-indigo-300 text-xs">
+                                                    <span>Read</span>
+                                                    <i class="fas fa-arrow-right text-[10px]"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    
+                                    <!-- Back Card (4th) - Professional Portfolio -->
+                                    <a href="#" class="portfolio-fourth-card absolute w-72 h-44 bg-gradient-to-br from-blue-600/20 to-cyan-600/20 rounded-2xl border border-blue-500/20 backdrop-blur-sm overflow-hidden cursor-pointer block" 
+                                         style="transform: rotateX(10deg) rotateY(-15deg) translateZ(-90px) translateX(60px) translateY(-30px);"
+                                         onclick="event.preventDefault();">
+                                        <!-- Card Content -->
+                                        <div class="h-full w-full p-4 flex flex-col justify-between">
+                                            <!-- Header -->
+                                            <div class="flex items-center justify-between">
+                                                <div class="flex items-center gap-2">
+                                                    <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center">
+                                                        <i class="fas fa-briefcase text-white text-xs"></i>
+                                                    </div>
+                                                    <div>
+                                                        <h4 class="text-white text-sm font-bold">Professional Portfolio</h4>
+                                                        <p class="text-blue-300 text-[10px]">Career & Experience</p>
+                                                    </div>
+                                                </div>
+                                                <div class="flex items-center gap-1 px-2 py-0.5 bg-blue-500/20 rounded-full">
+                                                    <i class="fas fa-award text-blue-400 text-[8px]"></i>
+                                                    <span class="text-blue-300 text-[10px]">Pro</span>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Middle Content -->
+                                            <div class="flex-1 flex items-center justify-center">
+                                                <div class="flex gap-3">
+                                                    <div class="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center">
+                                                        <i class="fab fa-linkedin text-blue-400"></i>
+                                                    </div>
+                                                    <div class="w-10 h-10 rounded-lg bg-cyan-500/20 flex items-center justify-center">
+                                                        <i class="fas fa-file-alt text-cyan-400"></i>
+                                                    </div>
+                                                    <div class="w-10 h-10 rounded-lg bg-sky-500/20 flex items-center justify-center">
+                                                        <i class="fas fa-certificate text-sky-400"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Footer -->
+                                            <div class="flex items-center justify-between">
+                                                <div class="flex gap-1">
+                                                    <span class="px-1.5 py-0.5 bg-blue-500/20 text-blue-300 text-[8px] rounded">Resume</span>
+                                                    <span class="px-1.5 py-0.5 bg-cyan-500/20 text-cyan-300 text-[8px] rounded">Skills</span>
+                                                    <span class="px-1.5 py-0.5 bg-sky-500/20 text-sky-300 text-[8px] rounded">Certs</span>
+                                                </div>
+                                                <div class="flex items-center gap-1 text-blue-300 text-xs">
+                                                    <span>Connect</span>
+                                                    <i class="fas fa-arrow-right text-[10px]"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    
+                                    <!-- Back Card (3rd) - Education Website -->
+                                    <a href="#" class="portfolio-back-card absolute w-72 h-44 bg-gradient-to-br from-yellow-600/20 to-amber-600/20 rounded-2xl border border-yellow-500/20 backdrop-blur-sm overflow-hidden cursor-pointer block" 
+                                         style="transform: rotateX(10deg) rotateY(-15deg) translateZ(-60px) translateX(40px) translateY(-20px);"
+                                         onclick="event.preventDefault();">
+                                        <!-- Card Content -->
+                                        <div class="h-full w-full p-4 flex flex-col justify-between">
+                                            <!-- Header -->
+                                            <div class="flex items-center justify-between">
+                                                <div class="flex items-center gap-2">
+                                                    <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-yellow-500 to-amber-600 flex items-center justify-center">
+                                                        <i class="fas fa-graduation-cap text-white text-xs"></i>
+                                                    </div>
+                                                    <div>
+                                                        <h4 class="text-white text-sm font-bold">Education Website</h4>
+                                                        <p class="text-yellow-300 text-[10px]">Home Tuition Center</p>
+                                                    </div>
+                                                </div>
+                                                <div class="flex items-center gap-1 px-2 py-0.5 bg-yellow-500/20 rounded-full">
+                                                    <i class="fas fa-book-open text-yellow-400 text-[8px]"></i>
+                                                    <span class="text-yellow-300 text-[10px]">Edu</span>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Middle Content -->
+                                            <div class="flex-1 flex items-center justify-center">
+                                                <div class="flex gap-3">
+                                                    <div class="w-10 h-10 rounded-lg bg-yellow-500/20 flex items-center justify-center">
+                                                        <i class="fas fa-chalkboard-teacher text-yellow-400"></i>
+                                                    </div>
+                                                    <div class="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
+                                                        <i class="fas fa-language text-amber-400"></i>
+                                                    </div>
+                                                    <div class="w-10 h-10 rounded-lg bg-orange-500/20 flex items-center justify-center">
+                                                        <i class="fas fa-user-graduate text-orange-400"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Footer -->
+                                            <div class="flex items-center justify-between">
+                                                <div class="flex gap-1">
+                                                    <span class="px-1.5 py-0.5 bg-yellow-500/20 text-yellow-300 text-[8px] rounded">Hindi</span>
+                                                    <span class="px-1.5 py-0.5 bg-amber-500/20 text-amber-300 text-[8px] rounded">Maths</span>
+                                                    <span class="px-1.5 py-0.5 bg-orange-500/20 text-orange-300 text-[8px] rounded">Science</span>
+                                                </div>
+                                                <div class="flex items-center gap-1 text-yellow-300 text-xs">
+                                                    <span>Enroll</span>
+                                                    <i class="fas fa-arrow-right text-[10px]"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    
+                                    <!-- Middle Card (2nd) - Technical Portfolio -->
+                                    <a href="#" class="portfolio-middle-card absolute w-72 h-44 bg-gradient-to-br from-green-600/30 to-emerald-600/30 rounded-2xl border border-green-500/30 backdrop-blur-sm overflow-hidden cursor-pointer block" 
+                                         style="transform: rotateX(10deg) rotateY(-15deg) translateZ(-30px) translateX(20px) translateY(-10px);"
+                                         onclick="event.preventDefault();">
+                                        <!-- Card Content -->
+                                        <div class="h-full w-full p-4 flex flex-col justify-between">
+                                            <!-- Header -->
+                                            <div class="flex items-center justify-between">
+                                                <div class="flex items-center gap-2">
+                                                    <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center">
+                                                        <i class="fas fa-code text-white text-xs"></i>
+                                                    </div>
+                                                    <div>
+                                                        <h4 class="text-white text-sm font-bold">Technical Portfolio</h4>
+                                                        <p class="text-green-300 text-[10px]">Code & Projects</p>
+                                                    </div>
+                                                </div>
+                                                <div class="flex items-center gap-1 px-2 py-0.5 bg-green-500/20 rounded-full">
+                                                    <span class="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></span>
+                                                    <span class="text-green-300 text-[10px]">Active</span>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Middle Content - Code Preview -->
+                                            <div class="flex-1 flex items-center justify-center my-2">
+                                                <div class="w-full h-full bg-gray-900/50 rounded-lg p-2 font-mono text-[10px]">
+                                                    <div class="text-green-400">$ git push origin main</div>
+                                                    <div class="text-gray-500">Enumerating objects: 15</div>
+                                                    <div class="text-emerald-400">✓ All checks passed</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Footer -->
+                                            <div class="flex items-center justify-between">
+                                                <div class="flex gap-1">
+                                                    <span class="px-1.5 py-0.5 bg-green-500/20 text-green-300 text-[8px] rounded">Python</span>
+                                                    <span class="px-1.5 py-0.5 bg-emerald-500/20 text-emerald-300 text-[8px] rounded">React</span>
+                                                    <span class="px-1.5 py-0.5 bg-teal-500/20 text-teal-300 text-[8px] rounded">AWS</span>
+                                                </div>
+                                                <div class="flex items-center gap-1 text-green-300 text-xs">
+                                                    <span>GitHub</span>
+                                                    <i class="fab fa-github text-[10px]"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    
+                                    <!-- Front Card (Main) - Photography Portfolio -->
+                                    <div class="portfolio-front-card relative w-72 h-44 bg-gray-900/95 rounded-2xl border-2 border-orange-500/50 shadow-2xl overflow-hidden group hover:scale-105 transition-all duration-500"
+                                         style="transform: rotateX(10deg) rotateY(-15deg);">
+                                        
+                                        <!-- Enhanced Glow Effect -->
+                                        <div class="absolute -inset-2 bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500 rounded-2xl blur-xl opacity-40 group-hover:opacity-70 transition-opacity"></div>
+                                        
+                                        <!-- Card Content -->
+                                        <div class="relative bg-gray-900 rounded-2xl overflow-hidden h-full">
+                                            <!-- Header with gradient -->
+                                            <div class="h-12 bg-gradient-to-r from-orange-500/20 via-pink-500/20 to-purple-500/20 relative">
+                                                <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\"20\" height=\"20\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Ccircle cx=\"1\" cy=\"1\" r=\"1\" fill=\"rgba(255,255,255,0.1)\"/%3E%3C/svg%3E')]"></div>
+                                                <!-- Camera Icon -->
+                                                <div class="absolute -bottom-5 left-3">
+                                                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-orange-500 to-pink-600 p-0.5 shadow-lg">
+                                                        <div class="w-full h-full rounded-lg bg-gray-900 flex items-center justify-center">
+                                                            <i class="fas fa-camera text-orange-400"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Featured Badge -->
+                                                <div class="absolute top-2 right-2 flex items-center gap-1 px-2 py-0.5 bg-orange-500/20 rounded-full">
+                                                    <i class="fas fa-star text-orange-400 text-[8px]"></i>
+                                                    <span class="text-orange-300 text-[10px]">Featured</span>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Info -->
+                                            <div class="pt-6 pb-3 px-3 flex flex-col justify-between" style="height: calc(100% - 48px);">
+                                                <div>
+                                                    <h4 class="text-white font-bold text-sm">Photography Portfolio</h4>
+                                                    <p class="text-gray-400 text-[10px]">Visual Stories & Moments</p>
+                                                </div>
+                                                
+                                                <!-- Footer -->
+                                                <div class="flex items-center justify-between">
+                                                    <!-- Tech Pills -->
+                                                    <div class="flex flex-wrap gap-1">
+                                                        <span class="px-1.5 py-0.5 bg-orange-500/20 text-orange-400 text-[8px] rounded">Portraits</span>
+                                                        <span class="px-1.5 py-0.5 bg-pink-500/20 text-pink-400 text-[8px] rounded">Nature</span>
+                                                        <span class="px-1.5 py-0.5 bg-purple-500/20 text-purple-400 text-[8px] rounded">Events</span>
+                                                    </div>
+                                                    <a href="#" class="flex items-center gap-1 text-orange-300 text-xs hover:text-orange-200 transition-colors">
+                                                        <span>Gallery</span>
+                                                        <i class="fas fa-images text-[10px]"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                
+                                <!-- Floating Code Snippet -->
+                                <div class="absolute right-0 top-8 bg-gray-900/90 backdrop-blur-sm rounded-lg p-3 border border-gray-700/50 shadow-xl hidden lg:block transform rotate-3 hover:rotate-0 transition-transform">
+                                    <pre class="text-xs font-mono">
+<span class="text-pink-400">const</span> <span class="text-cyan-400">portfolio</span> = {
+  <span class="text-purple-400">name</span>: <span class="text-green-400">"Siva"</span>,
+  <span class="text-purple-400">skills</span>: [<span class="text-yellow-400">∞</span>]
+};</pre>
+                                </div>
+                                
+                                <!-- Floating Achievement Badge -->
+                                <div class="absolute left-0 bottom-8 bg-gradient-to-r from-pink-500/10 to-purple-500/10 backdrop-blur-sm rounded-xl p-3 border border-pink-500/20 shadow-xl hidden lg:block">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-10 h-10 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 flex items-center justify-center">
+                                            <i class="fas fa-trophy text-white"></i>
+                                        </div>
+                                        <div>
+                                            <div class="text-white text-sm font-semibold">Featured</div>
+                                            <div class="text-gray-400 text-xs">Personal Project</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
                             </div>
                             
                         </div>
@@ -2138,22 +2624,178 @@ aws s3 sync ./dist</pre>
                 <div class="container mx-auto px-6 relative z-10">
                     <div class="grid lg:grid-cols-12 gap-8 items-start">
                         
-                        <!-- Left: Empty/Content Area -->
+                        <!-- Left: Business Dashboard Showcase -->
                         <div class="lg:col-span-8 relative z-10">
                             <div class="relative">
                                 
+                                <!-- 3D Dashboard Cards Layout -->
+                                <div class="relative max-w-xl mx-auto" style="perspective: 1000px;">
+                                    
+                                    <!-- Main Dashboard Card -->
+                                    <div class="relative transform hover:rotateY(5deg) transition-all duration-500 group">
+                                        <div class="absolute -inset-4 bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-teal-500/20 rounded-3xl blur-2xl opacity-50 group-hover:opacity-80 transition-opacity"></div>
+                                        
+                                        <div class="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-2xl p-6 border border-cyan-500/30 shadow-2xl overflow-hidden">
+                                            <!-- Dashboard Header -->
+                                            <div class="flex items-center justify-between mb-6">
+                                                <div class="flex items-center gap-3">
+                                                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center">
+                                                        <i class="fas fa-chart-line text-white"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div class="text-white font-bold">Analytics Pro</div>
+                                                        <div class="text-gray-500 text-xs">Business Dashboard</div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex gap-2">
+                                                    <div class="w-8 h-8 rounded-lg bg-gray-700/50 flex items-center justify-center">
+                                                        <i class="fas fa-bell text-gray-400 text-sm"></i>
+                                                    </div>
+                                                    <div class="w-8 h-8 rounded-lg bg-gray-700/50 flex items-center justify-center">
+                                                        <i class="fas fa-cog text-gray-400 text-sm"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Stats Grid -->
+                                            <div class="grid grid-cols-3 gap-3 mb-6">
+                                                <div class="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-xl p-3 border border-cyan-500/20">
+                                                    <div class="text-cyan-400 text-2xl font-bold">$52K</div>
+                                                    <div class="text-gray-500 text-xs">Revenue</div>
+                                                    <div class="flex items-center gap-1 mt-1">
+                                                        <i class="fas fa-arrow-up text-green-400 text-xs"></i>
+                                                        <span class="text-green-400 text-xs">+12%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-xl p-3 border border-purple-500/20">
+                                                    <div class="text-purple-400 text-2xl font-bold">2,847</div>
+                                                    <div class="text-gray-500 text-xs">Users</div>
+                                                    <div class="flex items-center gap-1 mt-1">
+                                                        <i class="fas fa-arrow-up text-green-400 text-xs"></i>
+                                                        <span class="text-green-400 text-xs">+8%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="bg-gradient-to-br from-green-500/10 to-teal-500/10 rounded-xl p-3 border border-green-500/20">
+                                                    <div class="text-green-400 text-2xl font-bold">98.5%</div>
+                                                    <div class="text-gray-500 text-xs">Uptime</div>
+                                                    <div class="flex items-center gap-1 mt-1">
+                                                        <i class="fas fa-check text-green-400 text-xs"></i>
+                                                        <span class="text-green-400 text-xs">Stable</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Chart Preview -->
+                                            <div class="bg-gray-800/50 rounded-xl p-4 border border-gray-700/50">
+                                                <div class="flex items-center justify-between mb-3">
+                                                    <div class="text-white text-sm font-semibold">Weekly Performance</div>
+                                                    <div class="flex gap-2">
+                                                        <span class="flex items-center gap-1 text-xs text-gray-400"><span class="w-2 h-2 rounded-full bg-cyan-500"></span> Sales</span>
+                                                        <span class="flex items-center gap-1 text-xs text-gray-400"><span class="w-2 h-2 rounded-full bg-purple-500"></span> Views</span>
+                                                    </div>
+                                                </div>
+                                                <!-- Mini Chart Bars -->
+                                                <div class="flex items-end justify-between h-20 gap-2">
+                                                    <div class="flex-1 flex flex-col items-center gap-1">
+                                                        <div class="w-full bg-cyan-500/60 rounded-t" style="height: 45%"></div>
+                                                        <span class="text-gray-500 text-[10px]">Mon</span>
+                                                    </div>
+                                                    <div class="flex-1 flex flex-col items-center gap-1">
+                                                        <div class="w-full bg-purple-500/60 rounded-t" style="height: 65%"></div>
+                                                        <span class="text-gray-500 text-[10px]">Tue</span>
+                                                    </div>
+                                                    <div class="flex-1 flex flex-col items-center gap-1">
+                                                        <div class="w-full bg-cyan-500/60 rounded-t" style="height: 40%"></div>
+                                                        <span class="text-gray-500 text-[10px]">Wed</span>
+                                                    </div>
+                                                    <div class="flex-1 flex flex-col items-center gap-1">
+                                                        <div class="w-full bg-purple-500/60 rounded-t" style="height: 80%"></div>
+                                                        <span class="text-gray-500 text-[10px]">Thu</span>
+                                                    </div>
+                                                    <div class="flex-1 flex flex-col items-center gap-1">
+                                                        <div class="w-full bg-cyan-500/60 rounded-t" style="height: 55%"></div>
+                                                        <span class="text-gray-500 text-[10px]">Fri</span>
+                                                    </div>
+                                                    <div class="flex-1 flex flex-col items-center gap-1">
+                                                        <div class="w-full bg-purple-500/60 rounded-t" style="height: 90%"></div>
+                                                        <span class="text-gray-500 text-[10px]">Sat</span>
+                                                    </div>
+                                                    <div class="flex-1 flex flex-col items-center gap-1">
+                                                        <div class="w-full bg-cyan-500/60 rounded-t" style="height: 70%"></div>
+                                                        <span class="text-gray-500 text-[10px]">Sun</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Floating Mini Cards -->
+                                    <div class="absolute -right-4 top-4 bg-gray-800/90 backdrop-blur-sm rounded-xl p-3 border border-cyan-500/30 shadow-xl transform rotate-6 hover:rotate-0 transition-transform hidden md:block">
+                                        <div class="flex items-center gap-2">
+                                            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center">
+                                                <i class="fas fa-check text-white text-xs"></i>
+                                            </div>
+                                            <div>
+                                                <div class="text-white text-sm font-semibold">Task Done</div>
+                                                <div class="text-gray-500 text-xs">+15 today</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="absolute -left-4 bottom-4 bg-gray-800/90 backdrop-blur-sm rounded-xl p-3 border border-purple-500/30 shadow-xl transform -rotate-6 hover:rotate-0 transition-transform hidden md:block">
+                                        <div class="flex items-center gap-2">
+                                            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
+                                                <i class="fas fa-users text-white text-xs"></i>
+                                            </div>
+                                            <div>
+                                                <div class="text-white text-sm font-semibold">New Clients</div>
+                                                <div class="text-gray-500 text-xs">+48 this week</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                
+                                <!-- Service Icons Row -->
+                                <div class="flex justify-center gap-4 mt-8">
+                                    <div class="group flex flex-col items-center gap-2">
+                                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 flex items-center justify-center transform group-hover:scale-110 transition-transform">
+                                            <i class="fas fa-store text-cyan-400"></i>
+                                        </div>
+                                        <span class="text-gray-500 text-xs">E-Commerce</span>
+                                    </div>
+                                    <div class="group flex flex-col items-center gap-2">
+                                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 border border-purple-500/30 flex items-center justify-center transform group-hover:scale-110 transition-transform">
+                                            <i class="fas fa-building text-purple-400"></i>
+                                        </div>
+                                        <span class="text-gray-500 text-xs">Corporate</span>
+                                    </div>
+                                    <div class="group flex flex-col items-center gap-2">
+                                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500/20 to-teal-500/20 border border-green-500/30 flex items-center justify-center transform group-hover:scale-110 transition-transform">
+                                            <i class="fas fa-handshake text-green-400"></i>
+                                        </div>
+                                        <span class="text-gray-500 text-xs">B2B Portal</span>
+                                    </div>
+                                    <div class="group flex flex-col items-center gap-2">
+                                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500/20 to-yellow-500/20 border border-orange-500/30 flex items-center justify-center transform group-hover:scale-110 transition-transform">
+                                            <i class="fas fa-graduation-cap text-orange-400"></i>
+                                        </div>
+                                        <span class="text-gray-500 text-xs">LMS</span>
+                                    </div>
+                                </div>
+                                
                             </div>
                         </div>
-                        
+
                         <!-- Right: Category Card -->
                         <div class="lg:col-span-4 sticky top-24 project-category-card animate-from-right opacity-0" style="transform: translateX(100px);">
                             <!-- 3D Category Card with Tilt Effect -->
-                            <div class="relative group" style="transform: perspective(1500px) rotateY(-15deg) rotateX(3deg) scale(0.95); transform-style: preserve-3d;">
+                            <div class="relative group" style="transform: perspective(1500px) rotateY(-15deg) rotateX(3deg) scale(0.80); transform-style: preserve-3d;">
                                 <!-- Card Shadow -->
                                 <div class="absolute -inset-2 bg-gradient-to-r from-cyan-600/20 via-blue-600/20 to-cyan-600/20 rounded-2xl blur-xl opacity-75 group-hover:opacity-100 transition-opacity"></div>
                                 
                                 <!-- Main Card -->
-                                <div class="relative bg-gradient-to-br from-gray-900 via-gray-800 to-black rounded-2xl p-8 border-2 border-gray-700 shadow-2xl overflow-hidden">
+                                <div class="relative bg-gradient-to-br from-gray-900 via-gray-800 to-black rounded-2xl p-5 border-2 border-gray-700 shadow-2xl overflow-hidden">
                                     <!-- Background Pattern -->
                                     <div class="absolute inset-0 opacity-5">
                                         <svg width="100%" height="100%">
@@ -2393,6 +3035,18 @@ aws s3 sync ./dist</pre>
                 font-weight: 700;
             }
             
+            /* Confetti animation for Tic Tac Toe win */
+            @keyframes xo-confetti-fall {
+                0% {
+                    transform: translateY(0) rotate(0deg) scale(1);
+                    opacity: 1;
+                }
+                100% {
+                    transform: translateY(400px) rotate(720deg) scale(0);
+                    opacity: 0;
+                }
+            }
+            
             .fun-tab-dot {
                 width: 4px;
                 height: 4px;
@@ -2532,8 +3186,8 @@ aws s3 sync ./dist</pre>
 
                     <!-- Tab 3: Gravity (NEW) -->
                     <div class="fun-tab" onclick="toggleFunTab('gravity')">
-                        <div class="fun-tab-circle text-purple-400" style="width: 65px; height: 65px;">
-                            <i class="fun-tab-icon fas fa-atom"></i>
+                        <div style="width: 65px; height: 65px; border-radius: 50%; overflow: hidden;">
+                            <img src="https://videos.openai.com/az/vg-assets/task_01keh8044ped6rvkxc4wddx1zd%2F1767957914_img_1.webp?se=2026-01-13T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-01-09T02%3A32%3A38Z&ske=2026-01-16T02%3A37%3A38Z&sks=b&skv=2024-08-04&sig=3vTG1lv8ld6pHvcJuePIcCdVf%2BKVWaDPBPlhW69XR5U%3D&ac=oaivgprodscus2" alt="Gravity" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                         <div class="fun-tab-label">
                             <div class="fun-tab-title" style="font-size: 11px;">Gravity</div>
@@ -3187,6 +3841,42 @@ aws s3 sync ./dist</pre>
         let xoGameActive = true;
         let xoStats = { xWins: 0, oWins: 0, draws: 0 };
 
+        // Celebration effect for player win
+        function celebrateWin() {
+            const container = document.getElementById('tictactoe');
+            if (!container) return;
+            
+            // Create confetti particles
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'xo-confetti';
+                confetti.style.cssText = `
+                    position: absolute;
+                    width: ${Math.random() * 10 + 5}px;
+                    height: ${Math.random() * 10 + 5}px;
+                    background: ${['#a855f7', '#ec4899', '#06b6d4', '#22c55e', '#eab308'][Math.floor(Math.random() * 5)]};
+                    left: ${Math.random() * 100}%;
+                    top: -10px;
+                    border-radius: ${Math.random() > 0.5 ? '50%' : '0'};
+                    pointer-events: none;
+                    z-index: 100;
+                    animation: xo-confetti-fall ${Math.random() * 2 + 2}s linear forwards;
+                    animation-delay: ${Math.random() * 0.5}s;
+                `;
+                container.appendChild(confetti);
+                
+                // Remove after animation
+                setTimeout(() => confetti.remove(), 3000);
+            }
+        }
+
+        // Auto reset after game ends
+        function autoReset(delay = 2500) {
+            setTimeout(() => {
+                resetXO();
+            }, delay);
+        }
+
         function makeMove(index) {
             if (!xoGameActive || xoBoard[index] !== '' || xoCurrentPlayer === 'O') {
                 return;
@@ -3208,6 +3898,8 @@ aws s3 sync ./dist</pre>
                 xoStats.xWins++;
                 const winsEl = document.getElementById('x-wins');
                 if (winsEl) winsEl.textContent = xoStats.xWins;
+                celebrateWin(); // Celebration effect!
+                autoReset(3000); // Auto reset after 3 seconds
                 return;
             }
 
@@ -3218,6 +3910,7 @@ aws s3 sync ./dist</pre>
                 xoStats.draws++;
                 const drawsEl = document.getElementById('draws');
                 if (drawsEl) drawsEl.textContent = xoStats.draws;
+                autoReset(); // Auto reset after 2.5 seconds
                 return;
             }
 
@@ -3252,6 +3945,7 @@ aws s3 sync ./dist</pre>
                     xoStats.oWins++;
                     const winsEl = document.getElementById('o-wins');
                     if (winsEl) winsEl.textContent = xoStats.oWins;
+                    autoReset(); // Auto reset after 2.5 seconds
                     return;
                 }
 
@@ -3262,6 +3956,7 @@ aws s3 sync ./dist</pre>
                     xoStats.draws++;
                     const drawsEl = document.getElementById('draws');
                     if (drawsEl) drawsEl.textContent = xoStats.draws;
+                    autoReset(); // Auto reset after 2.5 seconds
                     return;
                 }
 
@@ -3482,9 +4177,11 @@ aws s3 sync ./dist</pre>
                 console.log('Shaking!');
                 bodies.forEach(body => {
                     Matter.Body.applyForce(body, body.position, {
-                        x: (Math.random() - 0.5) * 0.08,
-                        y: (Math.random() - 0.5) * 0.08
+                        x: (Math.random() - 0.5) * 0.8,
+                        y: (Math.random() - 0.5) * 0.8
                     });
+                    // Also add angular velocity for spinning effect
+                    Matter.Body.setAngularVelocity(body, (Math.random() - 0.5) * 0.8);
                 });
             };
 
@@ -4245,6 +4942,51 @@ aws s3 sync ./dist</pre>
         function closeGravity() {
             document.getElementById('gravity-fullscreen').style.display = 'none';
         }
+    </script>
+    
+    <!-- Portfolio Card Auto-Cycle Script -->
+    <script>
+        (function() {
+            // Auto-cycle portfolio cards every 3 seconds
+            let currentCard = 0; // 0 = front (no active), 1 = middle, 2 = back, 3 = fourth, 4 = fifth
+            
+            function cycleCards() {
+                const frontCard = document.querySelector('.portfolio-front-card');
+                const middleCard = document.querySelector('.portfolio-middle-card');
+                const backCard = document.querySelector('.portfolio-back-card');
+                const fourthCard = document.querySelector('.portfolio-fourth-card');
+                const fifthCard = document.querySelector('.portfolio-fifth-card');
+                
+                if (!frontCard || !middleCard || !backCard || !fourthCard || !fifthCard) return;
+                
+                // Remove all active classes
+                frontCard.classList.remove('active');
+                middleCard.classList.remove('active');
+                backCard.classList.remove('active');
+                fourthCard.classList.remove('active');
+                fifthCard.classList.remove('active');
+                
+                // Cycle to next card
+                currentCard = (currentCard + 1) % 5;
+                
+                // Add active class based on current card
+                if (currentCard === 1) {
+                    middleCard.classList.add('active');
+                } else if (currentCard === 2) {
+                    backCard.classList.add('active');
+                } else if (currentCard === 3) {
+                    fourthCard.classList.add('active');
+                } else if (currentCard === 4) {
+                    fifthCard.classList.add('active');
+                }
+                // currentCard === 0 means front card is highlighted (default state, no active class needed)
+            }
+            
+            // Start auto-cycle when page loads
+            document.addEventListener('DOMContentLoaded', function() {
+                setInterval(cycleCards, 3000);
+            });
+        })();
     </script>
 
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'960c22c6d4a63a81',t:'MTc1Mjc4MDQzOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
