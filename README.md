@@ -2,6 +2,8 @@
 
 A modern, interactive portfolio website showcasing professional experience, projects, and skills with stunning animations and 3D effects.
 
+🔗 **Live Demo**: [https://siva-vignesh.github.io/portfolio/](https://siva-vignesh.github.io/portfolio/)
+
 ![Portfolio Preview](https://img.shields.io/badge/Status-Live-brightgreen) ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black) ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white)
 
 ---
@@ -57,15 +59,8 @@ A modern, interactive portfolio website showcasing professional experience, proj
 ## 📁 Project Structure
 
 ```
-SJ/
-├── siva.html          # Main portfolio page
-├── README.md          # This file
-├── index.html         # Landing page
-├── home.html          # Home page variant
-├── portfolio.html     # Portfolio page
-├── couple.html        # Couple page
-├── shaha.html         # Shaha's page
-└── ...
+portfolio/
+└── index.html          # Main portfolio page
 ```
 
 ---
@@ -103,44 +98,6 @@ SJ/
 
 ---
 
-## 🚀 Getting Started
-
-1. **Clone or download** the repository
-2. **Open** `siva.html` in a modern web browser
-3. **Enjoy** the interactive experience!
-
-```bash
-# If using a local server
-cd SJ
-python -m http.server 8000
-# Then open http://localhost:8000/siva.html
-```
-
----
-
-## 🎨 Customization
-
-### Update Company Logos
-Logos are loaded from Brandfetch CDN:
-```html
-<!-- Capgemini -->
-<img src="https://cdn.brandfetch.io/idbJBNV8BD/theme/dark/symbol.svg" />
-
-<!-- Wipro -->
-<img src="https://cdn.brandfetch.io/id1uICo497/theme/dark/logo.svg" />
-```
-
-### Modify Card Cycle Speed
-In the Portfolio Auto-Cycle Script:
-```javascript
-setInterval(cycleCards, 3000); // Change 3000 to desired ms
-```
-
-### Add New Portfolio Cards
-Add new cards in the `portfolio-stack-container` div with classes like `portfolio-sixth-card`.
-
----
-
 ## 📱 Responsive Design
 
 - ✅ Desktop optimized
@@ -156,7 +113,7 @@ Add new cards in the `portfolio-stack-container` div with classes like `portfoli
 - **Icons**: [Font Awesome](https://fontawesome.com/)
 - **CSS Framework**: [Tailwind CSS](https://tailwindcss.com/)
 - **Physics Engine**: [Matter.js](https://brm.io/matter-js/)
-- **Brand Logos**: [Brandfetch](https://brandfetch.com/)
+- **Company Logos**: [Brandfetch](https://brandfetch.com/) - Capgemini & Wipro brand assets
 
 ---
 
@@ -169,4 +126,3 @@ This project is for personal portfolio use. Feel free to use as inspiration for 
 <p align="center">
   Made with ❤️ by <strong>Siva</strong>
 </p>
-
