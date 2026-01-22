@@ -1684,12 +1684,31 @@ Python | Java | Selenium | Jenkins | Docker`
                 padding: 2px;
                 border-radius: 1.5rem;
             }
+            
+            /* Rotating Squares Animation */
+            @keyframes rotate-square {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+            @keyframes rotate-square-reverse {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(-360deg); }
+            }
+            .rotating-square {
+                animation: rotate-square 20s linear infinite;
+            }
+            .rotating-square-reverse {
+                animation: rotate-square-reverse 25s linear infinite;
+            }
         </style>
         
-        <!-- Floating Elements -->
-        <div class="absolute top-20 left-10 w-20 h-20 border-2 border-white/10 rounded-xl rotate-12 animate-pulse"></div>
-        <div class="absolute bottom-20 right-10 w-16 h-16 border-2 border-pink-500/20 rounded-full animate-bounce"></div>
-        <div class="absolute top-1/2 left-20 w-24 h-24 border border-purple-500/20 rounded-lg -rotate-12 animate-pulse"></div>
+        <!-- Rotating Square Background Elements -->
+        <div class="absolute top-10 left-10 w-32 h-32 border-2 border-white/10 rounded-xl rotating-square"></div>
+        <div class="absolute top-1/4 right-20 w-24 h-24 border-2 border-pink-500/20 rounded-lg rotating-square-reverse"></div>
+        <div class="absolute bottom-20 left-1/4 w-20 h-20 border border-purple-500/20 rounded-xl rotating-square" style="animation-duration: 15s;"></div>
+        <div class="absolute top-1/2 right-10 w-16 h-16 border-2 border-indigo-500/20 rounded-lg rotating-square-reverse" style="animation-duration: 18s;"></div>
+        <div class="absolute bottom-10 right-1/3 w-28 h-28 border border-cyan-500/15 rounded-xl rotating-square" style="animation-duration: 30s;"></div>
+        <div class="absolute top-32 left-1/3 w-14 h-14 border-2 border-violet-500/15 rounded-lg rotating-square-reverse" style="animation-duration: 22s;"></div>
 
         <!-- Grid Background -->
         <div class="absolute inset-0 opacity-5" style="background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 50px 50px;"></div>
@@ -1803,7 +1822,7 @@ Python | Java | Selenium | Jenkins | Docker`
                             </div>
                             <!-- Total Experience Badge -->
                             <div class="text-right">
-                                <div class="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400">5.5+</div>
+                                <div class="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400">6.5+</div>
                                 <p class="text-[9px] text-white/50 uppercase tracking-wider">Years Total</p>
                             </div>
                         </div>
@@ -1816,6 +1835,10 @@ Python | Java | Selenium | Jenkins | Docker`
                                 <div class="bg-white/5 rounded-xl p-4 border border-white/10">
                                     <div class="flex items-center justify-between mb-1">
                                         <div class="flex items-center gap-2">
+                                            <!-- Capgemini Logo -->
+                                            <div class="w-8 h-8 rounded-md flex items-center justify-center overflow-hidden">
+                                                <img src="https://cdn.brandfetch.io/idbJBNV8BD/theme/dark/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B" alt="Capgemini" class="w-full h-full object-contain"/>
+                                            </div>
                                             <h4 class="text-base font-bold text-white">Capgemini</h4>
                                             <span class="text-[8px] px-2 py-0.5 bg-pink-500/30 text-pink-300 rounded-full">NOW</span>
                                         </div>
@@ -1832,7 +1855,13 @@ Python | Java | Selenium | Jenkins | Docker`
                                 </div>
                                 <div class="bg-white/5 rounded-xl p-4 border border-white/10 opacity-80">
                                     <div class="flex items-center justify-between mb-1">
-                                        <h4 class="text-base font-bold text-white">Wipro</h4>
+                                        <div class="flex items-center gap-2">
+                                            <!-- Wipro Logo -->
+                                            <div class="w-8 h-8 rounded-md flex items-center justify-center overflow-hidden">
+                                                <img src="https://cdn.brandfetch.io/id1uICo497/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B" alt="Wipro" class="w-full h-full object-contain"/>
+                                            </div>
+                                            <h4 class="text-base font-bold text-white">Wipro</h4>
+                                        </div>
                                         <span class="text-[9px] px-2 py-0.5 bg-white/5 text-white/60 rounded-full border border-white/10">5.5 yrs</span>
                                     </div>
                                     <p class="text-xs text-white/60">Automation Engineer</p>
@@ -1847,7 +1876,7 @@ Python | Java | Selenium | Jenkins | Docker`
     </section>
 
     <!-- ======================= ZIGZAG PROJECT BANNERS ======================= -->
-    <section id="project-banners" class="relative py-24 bg-black overflow-hidden">
+    <section id="project-banners" class="relative py-24 bg-black overflow-x-clip">
         <style>
             /* Rotating Orb Animation */
             @keyframes orb-rotate {
@@ -2312,10 +2341,10 @@ aws s3 sync ./dist</pre>
                     
                     <!-- Right: Portfolio Project Showcase - REDESIGNED -->
                     <div class="lg:col-span-8 relative z-10">
-                        <div class="relative">
+                        <div class="relative overflow-visible">
                             
                             <!-- Isometric Card Stack -->
-                            <div class="relative h-[400px] flex items-center justify-center">
+                            <div class="relative h-[400px] flex items-center justify-center overflow-visible pr-20">
                                 
                                 <!-- Floating Particles -->
                                 <div class="absolute inset-0 overflow-hidden pointer-events-none">
@@ -2553,11 +2582,6 @@ aws s3 sync ./dist</pre>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- Featured Badge -->
-                                                <div class="absolute top-2 right-2 flex items-center gap-1 px-2 py-0.5 bg-orange-500/20 rounded-full">
-                                                    <i class="fas fa-star text-orange-400 text-[8px]"></i>
-                                                    <span class="text-orange-300 text-[10px]">Featured</span>
-                                                </div>
                                             </div>
                                             
                                             <!-- Info -->
@@ -2586,6 +2610,23 @@ aws s3 sync ./dist</pre>
                                     
                                 </div>
                                 
+                                <!-- 🚀 FLOATING PROJECTS BUTTON - Animated Rocket Launch -->
+                                <button id="showProjectsBtn" class="absolute right-0 top-1/2 -translate-y-1/2 z-50 group">
+                                    <div class="relative">
+                                        <!-- Pulsing Ring -->
+                                        <div class="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full animate-ping opacity-30"></div>
+                                        <!-- Button -->
+                                        <div class="relative w-14 h-14 bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-600 rounded-full flex items-center justify-center shadow-lg shadow-purple-500/40 group-hover:shadow-purple-500/60 group-hover:scale-110 transition-all duration-300 cursor-pointer border-2 border-white/20">
+                                            <i class="fas fa-rocket text-white text-lg group-hover:animate-bounce"></i>
+                                        </div>
+                                        <!-- Tooltip -->
+                                        <div class="absolute right-full mr-3 top-1/2 -translate-y-1/2 px-3 py-1.5 bg-gray-900/95 backdrop-blur-sm rounded-lg border border-purple-500/30 opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap pointer-events-none">
+                                            <span class="text-white text-sm font-medium">View Projects</span>
+                                            <div class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1 w-2 h-2 bg-gray-900 border-r border-t border-purple-500/30 rotate-45"></div>
+                                        </div>
+                                    </div>
+                                </button>
+                                
                                 <!-- Floating Code Snippet -->
                                 <div class="absolute right-0 top-8 bg-gray-900/90 backdrop-blur-sm rounded-lg p-3 border border-gray-700/50 shadow-xl hidden lg:block transform rotate-3 hover:rotate-0 transition-transform">
                                     <pre class="text-xs font-mono">
@@ -2593,19 +2634,6 @@ aws s3 sync ./dist</pre>
   <span class="text-purple-400">name</span>: <span class="text-green-400">"Siva"</span>,
   <span class="text-purple-400">skills</span>: [<span class="text-yellow-400">∞</span>]
 };</pre>
-                                </div>
-                                
-                                <!-- Floating Achievement Badge -->
-                                <div class="absolute left-0 bottom-8 bg-gradient-to-r from-pink-500/10 to-purple-500/10 backdrop-blur-sm rounded-xl p-3 border border-pink-500/20 shadow-xl hidden lg:block">
-                                    <div class="flex items-center gap-3">
-                                        <div class="w-10 h-10 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 flex items-center justify-center">
-                                            <i class="fas fa-trophy text-white"></i>
-                                        </div>
-                                        <div>
-                                            <div class="text-white text-sm font-semibold">Featured</div>
-                                            <div class="text-gray-400 text-xs">Personal Project</div>
-                                        </div>
-                                    </div>
                                 </div>
                                 
                             </div>
@@ -3176,7 +3204,7 @@ aws s3 sync ./dist</pre>
                     <!-- Tab 2: XO Game -->
                     <div class="fun-tab xo-tab" onclick="toggleFunTab('music')">
                         <div style="width: 65px; height: 65px; transition: transform 0.3s ease;">
-                            <img src="https://videos.openai.com/az/vg-assets/task_01keh6mgjzfn69rv33h20wyjd5%2F1767956491_img_0.webp?se=2026-01-13T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-01-09T02%3A42%3A47Z&ske=2026-01-16T02%3A47%3A47Z&sks=b&skv=2024-08-04&sig=O5g5Ggedy%2BXGUdecevE76/CcFYDyJGJTuGuU6xV0zp4%3D&ac=oaivgprodscus2" alt="XO" class="xo-tab-img" style="width: 100%; height: 100%; object-fit: contain; transition: transform 0.3s ease;">
+                            <img src="xo.avif" alt="XO" class="xo-tab-img" style="width: 100%; height: 100%; object-fit: contain; transition: transform 0.3s ease;">
                         </div>
                         <div class="fun-tab-label">
                             <div class="fun-tab-title" style="font-size: 11px;">Tic Tac Toe</div>
@@ -3187,7 +3215,7 @@ aws s3 sync ./dist</pre>
                     <!-- Tab 3: Gravity (NEW) -->
                     <div class="fun-tab" onclick="toggleFunTab('gravity')">
                         <div style="width: 65px; height: 65px; border-radius: 50%; overflow: hidden;">
-                            <img src="https://videos.openai.com/az/vg-assets/task_01keh8044ped6rvkxc4wddx1zd%2F1767957914_img_1.webp?se=2026-01-13T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-01-09T02%3A32%3A38Z&ske=2026-01-16T02%3A37%3A38Z&sks=b&skv=2024-08-04&sig=3vTG1lv8ld6pHvcJuePIcCdVf%2BKVWaDPBPlhW69XR5U%3D&ac=oaivgprodscus2" alt="Gravity" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="gravity.avif" alt="Gravity" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                         <div class="fun-tab-label">
                             <div class="fun-tab-title" style="font-size: 11px;">Gravity</div>
@@ -4028,25 +4056,46 @@ aws s3 sync ./dist</pre>
 
         // ==================== NEW GRAVITY SIMULATOR ====================
         (function() {
+            // Skills with DIFFERENT shapes and icons/logos
             const skills = [
-                { name: 'Python', color: '#3776ab' },
-                { name: 'JavaScript', color: '#f7df1e' },
-                { name: 'React', color: '#61dafb' },
-                { name: 'Node.js', color: '#68a063' },
-                { name: 'HTML', color: '#e34c26' },
-                { name: 'CSS', color: '#264de4' },
-                { name: 'Git', color: '#f05032' },
-                { name: 'GitHub', color: '#181717' },
-                { name: 'Docker', color: '#0db7ed' },
-                { name: 'AWS', color: '#ff9900' },
-                { name: 'Linux', color: '#fcc624' },
-                { name: 'Java', color: '#007396' },
-                { name: 'PHP', color: '#777bb4' },
-                { name: 'Angular', color: '#dd0031' },
-                { name: 'Vue', color: '#42b883' }
+                { name: 'Python', color: '#3776ab', icon: '\uf3e2', shape: 'circle' },
+                { name: 'JavaScript', color: '#f7df1e', icon: '\uf3b8', shape: 'hexagon' },
+                { name: 'React', color: '#61dafb', icon: '\uf41b', shape: 'circle' },
+                { name: 'Node.js', color: '#68a063', icon: '\uf3d3', shape: 'pentagon' },
+                { name: 'HTML', color: '#e34c26', icon: '\uf13b', shape: 'diamond' },
+                { name: 'CSS', color: '#264de4', icon: '\uf13c', shape: 'triangle' },
+                { name: 'Git', color: '#f05032', icon: '\uf1d3', shape: 'hexagon' },
+                { name: 'GitHub', color: '#6e5494', icon: '\uf09b', shape: 'circle' },
+                { name: 'Docker', color: '#0db7ed', icon: '\uf395', shape: 'roundedSquare' },
+                { name: 'AWS', color: '#ff9900', icon: '\uf375', shape: 'pentagon' },
+                { name: 'Linux', color: '#fcc624', icon: '\uf17c', shape: 'diamond' },
+                { name: 'Java', color: '#007396', icon: '\uf4e4', shape: 'triangle' },
+                { name: 'PHP', color: '#777bb4', icon: '\uf457', shape: 'hexagon' },
+                { name: 'Angular', color: '#dd0031', icon: '\uf420', shape: 'circle' },
+                { name: 'Vue', color: '#42b883', icon: '\uf41f', shape: 'pentagon' }
             ];
 
             let engine, render, runner, bodies = [];
+            const SIZE = 42;
+
+            function createShape(x, y, shape, size) {
+                switch(shape) {
+                    case 'circle':
+                        return Matter.Bodies.circle(x, y, size);
+                    case 'triangle':
+                        return Matter.Bodies.polygon(x, y, 3, size * 1.1);
+                    case 'hexagon':
+                        return Matter.Bodies.polygon(x, y, 6, size, { angle: Math.PI / 6 });
+                    case 'pentagon':
+                        return Matter.Bodies.polygon(x, y, 5, size);
+                    case 'diamond':
+                        return Matter.Bodies.polygon(x, y, 4, size * 1.1, { angle: Math.PI / 4 });
+                    case 'roundedSquare':
+                        return Matter.Bodies.rectangle(x, y, size * 1.8, size * 1.8, { chamfer: { radius: 10 } });
+                    default:
+                        return Matter.Bodies.circle(x, y, size);
+                }
+            }
 
             window.initGravityPhysics = function() {
                 console.log('=== INIT GRAVITY PHYSICS CALLED ===');
@@ -4074,7 +4123,7 @@ aws s3 sync ./dist</pre>
 
                 // Create engine
                 engine = Matter.Engine.create();
-                engine.world.gravity.y = 1;
+                engine.world.gravity.y = 0.8;
 
                 // Create renderer
                 render = Matter.Render.create({
@@ -4090,11 +4139,17 @@ aws s3 sync ./dist</pre>
 
                 console.log('Render created, canvas in render:', render.canvas.width, 'x', render.canvas.height);
 
-                // Walls
+                // Walls - ALL 4 SIDES including TOP (stronger boundaries)
+                const wallThickness = 80;
                 const walls = [
-                    Matter.Bodies.rectangle(width/2, height + 25, width, 50, { isStatic: true, render: { fillStyle: 'transparent' } }),
-                    Matter.Bodies.rectangle(-25, height/2, 50, height, { isStatic: true, render: { fillStyle: 'transparent' } }),
-                    Matter.Bodies.rectangle(width + 25, height/2, 50, height, { isStatic: true, render: { fillStyle: 'transparent' } })
+                    // Bottom wall
+                    Matter.Bodies.rectangle(width/2, height + wallThickness/2 - 10, width + 200, wallThickness, { isStatic: true, render: { fillStyle: 'transparent' } }),
+                    // Left wall
+                    Matter.Bodies.rectangle(-wallThickness/2 + 10, height/2, wallThickness, height + 200, { isStatic: true, render: { fillStyle: 'transparent' } }),
+                    // Right wall
+                    Matter.Bodies.rectangle(width + wallThickness/2 - 10, height/2, wallThickness, height + 200, { isStatic: true, render: { fillStyle: 'transparent' } }),
+                    // TOP wall - positioned at y=0 to prevent escaping
+                    Matter.Bodies.rectangle(width/2, -wallThickness/2 + 10, width + 200, wallThickness, { isStatic: true, render: { fillStyle: 'transparent' } })
                 ];
                 Matter.World.add(engine.world, walls);
 
@@ -4108,8 +4163,9 @@ aws s3 sync ./dist</pre>
                     }
                 });
                 Matter.World.add(engine.world, mouseConstraint);
+                render.mouse = mouse;
 
-                // Custom rendering for text
+                // Custom rendering for icons and text
                 Matter.Events.on(render, 'afterRender', function() {
                     const context = render.context;
                     bodies.forEach(body => {
@@ -4117,17 +4173,26 @@ aws s3 sync ./dist</pre>
                         
                         const pos = body.position;
                         const angle = body.angle;
+                        const skill = body.skillData;
                         
                         context.save();
                         context.translate(pos.x, pos.y);
                         context.rotate(angle);
                         
-                        // Draw text
-                        context.font = 'bold 14px monospace';
-                        context.fillStyle = '#fff';
+                        // Draw icon (Font Awesome brand icons)
+                        context.font = '900 24px "Font Awesome 6 Brands"';
+                        context.fillStyle = '#ffffff';
                         context.textAlign = 'center';
                         context.textBaseline = 'middle';
-                        context.fillText(body.skillData.name, 0, 0);
+                        context.shadowColor = 'rgba(0,0,0,0.6)';
+                        context.shadowBlur = 5;
+                        context.fillText(skill.icon, 0, -6);
+                        
+                        // Draw skill name below icon
+                        context.font = 'bold 9px Montserrat, sans-serif';
+                        context.fillStyle = 'rgba(255,255,255,0.95)';
+                        context.shadowBlur = 3;
+                        context.fillText(skill.name, 0, 16);
                         
                         context.restore();
                     });
@@ -4155,15 +4220,17 @@ aws s3 sync ./dist</pre>
                 const width = window.innerWidth;
 
                 skills.forEach((skill, i) => {
-                    const x = 100 + (i * (width - 200) / skills.length);
-                    const y = -100 - (i * 40);
+                    const x = 100 + (i * (width - 200) / skills.length) + (Math.random() - 0.5) * 50;
+                    const y = 80 + Math.random() * 60; // Start inside visible area
                     
-                    const body = Matter.Bodies.rectangle(x, y, 120, 45, {
-                        chamfer: { radius: 22 },
-                        render: { fillStyle: skill.color },
-                        restitution: 0.7,
-                        friction: 0.05
-                    });
+                    // Create shape based on skill's shape property
+                    const body = createShape(x, y, skill.shape, SIZE);
+                    body.render.fillStyle = skill.color;
+                    body.render.strokeStyle = 'rgba(255,255,255,0.35)';
+                    body.render.lineWidth = 3;
+                    body.restitution = 0.7;
+                    body.friction = 0.08;
+                    body.frictionAir = 0.008;
                     
                     body.skillData = skill;
                     bodies.push(body);
@@ -4177,8 +4244,8 @@ aws s3 sync ./dist</pre>
                 console.log('Shaking!');
                 bodies.forEach(body => {
                     Matter.Body.applyForce(body, body.position, {
-                        x: (Math.random() - 0.5) * 0.8,
-                        y: (Math.random() - 0.5) * 0.8
+                        x: (Math.random() - 0.5) * 0.6,
+                        y: (Math.random() - 0.3) * 0.5
                     });
                     // Also add angular velocity for spinning effect
                     Matter.Body.setAngularVelocity(body, (Math.random() - 0.5) * 0.8);
@@ -4986,6 +5053,195 @@ aws s3 sync ./dist</pre>
             document.addEventListener('DOMContentLoaded', function() {
                 setInterval(cycleCards, 3000);
             });
+        })();
+    </script>
+
+    <!-- ======================= PROJECTS SHOWCASE MODAL ======================= -->
+    <div id="projectsModal" class="fixed inset-0 z-[9999] hidden">
+        <!-- Backdrop with blur -->
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-md" onclick="closeProjectsModal()"></div>
+        
+        <!-- Modal Content -->
+        <div class="relative h-full flex items-center justify-center p-4 md:p-8">
+            <div class="relative w-full max-w-6xl max-h-[90vh] bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 rounded-3xl border border-purple-500/30 shadow-2xl shadow-purple-500/20 overflow-hidden modal-content">
+                
+                <!-- Animated Background -->
+                <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                    <div class="absolute top-0 left-1/4 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl animate-pulse"></div>
+                    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-conic from-pink-500/5 via-purple-500/5 to-pink-500/5 rounded-full animate-spin" style="animation-duration: 20s;"></div>
+                </div>
+                
+                <!-- Header -->
+                <div class="relative p-6 md:p-8 border-b border-gray-700/50">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg shadow-purple-500/30">
+                                <i class="fas fa-rocket text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h2 class="text-2xl md:text-3xl font-bold bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent">My Projects</h2>
+                                <p class="text-gray-400 text-sm">Explore my creative journey</p>
+                            </div>
+                        </div>
+                        <button onclick="closeProjectsModal()" class="w-10 h-10 bg-gray-800/80 hover:bg-red-500/20 border border-gray-700 hover:border-red-500/50 rounded-xl flex items-center justify-center transition-all duration-300 group">
+                            <i class="fas fa-times text-gray-400 group-hover:text-red-400 transition-colors"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Projects Grid -->
+                <div class="relative p-6 md:p-8 overflow-y-auto" style="max-height: calc(90vh - 120px);">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        
+                        <!-- Project 1 - Coming Soon -->
+                        <div class="group relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl border border-gray-700/50 hover:border-pink-500/50 overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-pink-500/10 hover:-translate-y-2">
+                            <div class="aspect-video bg-gradient-to-br from-pink-500/20 to-purple-500/20 flex items-center justify-center relative overflow-hidden">
+                                <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\"30\" height=\"30\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cpath d=\"M0 0h30v30H0z\" fill=\"none\"/%3E%3Cpath d=\"M0 30L30 0\" stroke=\"rgba(255,255,255,0.03)\" stroke-width=\"1\"/%3E%3C/svg%3E')]"></div>
+                                <i class="fas fa-code text-5xl text-pink-400/50 group-hover:text-pink-400 group-hover:scale-110 transition-all duration-500"></i>
+                            </div>
+                            <div class="p-5">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="px-2 py-0.5 bg-pink-500/20 text-pink-400 text-[10px] rounded-full font-medium">Coming Soon</span>
+                                </div>
+                                <h3 class="text-white font-bold mb-1 group-hover:text-pink-300 transition-colors">Project Title</h3>
+                                <p class="text-gray-400 text-sm mb-3">Your amazing project description will go here.</p>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex gap-1">
+                                        <span class="px-2 py-0.5 bg-gray-700/50 text-gray-400 text-[10px] rounded">Tech</span>
+                                        <span class="px-2 py-0.5 bg-gray-700/50 text-gray-400 text-[10px] rounded">Stack</span>
+                                    </div>
+                                    <i class="fas fa-arrow-right text-pink-400 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Project 2 - Coming Soon -->
+                        <div class="group relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl border border-gray-700/50 hover:border-purple-500/50 overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-purple-500/10 hover:-translate-y-2">
+                            <div class="aspect-video bg-gradient-to-br from-purple-500/20 to-indigo-500/20 flex items-center justify-center relative overflow-hidden">
+                                <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\"30\" height=\"30\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cpath d=\"M0 0h30v30H0z\" fill=\"none\"/%3E%3Cpath d=\"M0 30L30 0\" stroke=\"rgba(255,255,255,0.03)\" stroke-width=\"1\"/%3E%3C/svg%3E')]"></div>
+                                <i class="fas fa-palette text-5xl text-purple-400/50 group-hover:text-purple-400 group-hover:scale-110 transition-all duration-500"></i>
+                            </div>
+                            <div class="p-5">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="px-2 py-0.5 bg-purple-500/20 text-purple-400 text-[10px] rounded-full font-medium">Coming Soon</span>
+                                </div>
+                                <h3 class="text-white font-bold mb-1 group-hover:text-purple-300 transition-colors">Project Title</h3>
+                                <p class="text-gray-400 text-sm mb-3">Your amazing project description will go here.</p>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex gap-1">
+                                        <span class="px-2 py-0.5 bg-gray-700/50 text-gray-400 text-[10px] rounded">Tech</span>
+                                        <span class="px-2 py-0.5 bg-gray-700/50 text-gray-400 text-[10px] rounded">Stack</span>
+                                    </div>
+                                    <i class="fas fa-arrow-right text-purple-400 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Project 3 - Coming Soon -->
+                        <div class="group relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl border border-gray-700/50 hover:border-indigo-500/50 overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-indigo-500/10 hover:-translate-y-2">
+                            <div class="aspect-video bg-gradient-to-br from-indigo-500/20 to-cyan-500/20 flex items-center justify-center relative overflow-hidden">
+                                <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\"30\" height=\"30\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cpath d=\"M0 0h30v30H0z\" fill=\"none\"/%3E%3Cpath d=\"M0 30L30 0\" stroke=\"rgba(255,255,255,0.03)\" stroke-width=\"1\"/%3E%3C/svg%3E')]"></div>
+                                <i class="fas fa-mobile-alt text-5xl text-indigo-400/50 group-hover:text-indigo-400 group-hover:scale-110 transition-all duration-500"></i>
+                            </div>
+                            <div class="p-5">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="px-2 py-0.5 bg-indigo-500/20 text-indigo-400 text-[10px] rounded-full font-medium">Coming Soon</span>
+                                </div>
+                                <h3 class="text-white font-bold mb-1 group-hover:text-indigo-300 transition-colors">Project Title</h3>
+                                <p class="text-gray-400 text-sm mb-3">Your amazing project description will go here.</p>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex gap-1">
+                                        <span class="px-2 py-0.5 bg-gray-700/50 text-gray-400 text-[10px] rounded">Tech</span>
+                                        <span class="px-2 py-0.5 bg-gray-700/50 text-gray-400 text-[10px] rounded">Stack</span>
+                                    </div>
+                                    <i class="fas fa-arrow-right text-indigo-400 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Add More Project Card -->
+                        <div class="group relative bg-gradient-to-br from-gray-800/30 to-gray-900/30 rounded-2xl border-2 border-dashed border-gray-700/50 hover:border-purple-500/50 overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-purple-500/10 flex items-center justify-center min-h-[280px] cursor-pointer">
+                            <div class="text-center p-6">
+                                <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                                    <i class="fas fa-plus text-2xl text-purple-400"></i>
+                                </div>
+                                <h3 class="text-gray-400 font-medium group-hover:text-purple-300 transition-colors">More Coming Soon</h3>
+                                <p class="text-gray-500 text-sm mt-1">Stay tuned for updates!</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+    <!-- Projects Modal Script -->
+    <script>
+        (function() {
+            const modal = document.getElementById('projectsModal');
+            const btn = document.getElementById('showProjectsBtn');
+            const modalContent = modal?.querySelector('.modal-content');
+            
+            // Open modal with animation
+            function openProjectsModal() {
+                if (!modal) return;
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+                
+                // Animate in
+                setTimeout(() => {
+                    modal.querySelector('.bg-black\\/80').style.opacity = '1';
+                    if (modalContent) {
+                        modalContent.style.transform = 'scale(1)';
+                        modalContent.style.opacity = '1';
+                    }
+                }, 10);
+            }
+            
+            // Close modal
+            window.closeProjectsModal = function() {
+                if (!modal) return;
+                
+                modal.querySelector('.bg-black\\/80').style.opacity = '0';
+                if (modalContent) {
+                    modalContent.style.transform = 'scale(0.95)';
+                    modalContent.style.opacity = '0';
+                }
+                
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                    document.body.style.overflow = '';
+                }, 300);
+            }
+            
+            // Initialize
+            if (btn) {
+                btn.addEventListener('click', openProjectsModal);
+            }
+            
+            // Close on Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                    closeProjectsModal();
+                }
+            });
+            
+            // Set initial styles for animation
+            if (modal) {
+                const backdrop = modal.querySelector('.bg-black\\/80');
+                if (backdrop) {
+                    backdrop.style.transition = 'opacity 0.3s ease';
+                    backdrop.style.opacity = '0';
+                }
+                if (modalContent) {
+                    modalContent.style.transition = 'transform 0.3s ease, opacity 0.3s ease';
+                    modalContent.style.transform = 'scale(0.95)';
+                    modalContent.style.opacity = '0';
+                }
+            }
         })();
     </script>
 
